@@ -174,11 +174,11 @@
 
 
                                         <div class="row justy centerbottom">
-                                            <button id="booknowe"  class="ui-btn ui-btn-b cusbtn" style="background: #434343; border-color: #ffffff;border-radius: 10px;">Confirm</button>
+                                            <button id="booknowe"  onclick="nextPage()" class="ui-btn ui-btn-b cusbtn" style="background: #434343; border-color: #ffffff;border-radius: 10px;">Confirm</button>
 
                                         </div>
                                         <div class="row justy">
-                                            <button id="booknowe"  class="ui-btn ui-btn-b cusbtn" style="background: #434343; border-color: #ffffff;border-radius: 10px;">Cancel</button>
+                                            <button id="booknowe"  onclick="previousPage()" class="ui-btn ui-btn-b cusbtn" style="background: #434343; border-color: #ffffff;border-radius: 10px;">Cancel</button>
 
                                         </div>
 
@@ -196,8 +196,16 @@
             </div>
 
         </div>
-
-
+        
+        <script>function nextPage() {
+                                        window.open("booking_details.php", "_self");
+                                    }                                                        
+        </script>
+        
+        <script>function previousPage() {
+                                        window.history.back();
+                                    }                                                        
+        </script>
       
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>

@@ -20,9 +20,6 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="resources/libs/jquery-mobile/jquery.mobile-1.4.5.min.css">
         <script src="resources/libs/jQuery/js/jquery.3.1.1.min.js"></script>
         <script src="resources/libs/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
-        <link href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" rel="stylesheet" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
         <style>
             th, td {
                 /*                border: 1px solid black;*/
@@ -122,11 +119,11 @@ and open the template in the editor.
 
                                         </div>
                                         <div class="row justy">
-                                            <input type="text" style="text-align:center;" id="mydate" />
+                                            <input type="date" style="text-align:center;" value="2017-01-14">
 
                                         </div>
                                         <div class="row justy">
-                                            <button id="booknowe"  class="ui-btn ui-btn-b cusbtn" style="background: #434343; border-color: #ffffff;border-radius: 10px;">Book Now</button>
+                                            <button id="booknowe"  onclick="nextPage()" class="ui-btn ui-btn-b cusbtn" style="background: #434343; border-color: #ffffff;border-radius: 10px;">Book Now</button>
 
                                         </div>
 
@@ -148,14 +145,14 @@ and open the template in the editor.
             </div>
 
         </div>
-
-        <script>
-            $("#mydate").datepicker().datepicker("setDate", new Date());
-
-
+        
+        <script>function nextPage() {
+                                        window.open("booking_confirmation.php", "_self");
+                                    }                                                        
         </script>
         
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
+        
     </body>
 </html>
