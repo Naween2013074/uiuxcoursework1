@@ -101,9 +101,9 @@ and open the template in the editor.
 
                                     </ul>
                                 </div>
-                                <div id="one" class="tabs ui-body-d ui-content">
+                                <div id="one" onclick="nextPage()" class="tabs ui-body-d ui-content">
                                     <ul data-role="listview" data-inset="true">
-                                        <li><a href="booking.html" style="background-color:#434343" >
+                                        <li><a style="background-color:#434343" >
                                                 <img src="resources/images/booking/pub-moratuwa.jpg">
                                                 <h2>Wellawatte</h2>
                                                 <p>4Km</p></a>
@@ -135,7 +135,7 @@ and open the template in the editor.
                                         </li>
                                     </ul>
                                 </div>
-                                <div id="two" class="img tabs ui-body-d ui-content">
+                                <div id="two" onclick="nextPage()" class="img tabs ui-body-d ui-content">
                                     <div class="container">
 
                                         <div class="row">
@@ -186,6 +186,11 @@ and open the template in the editor.
         </div>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
+        <script>function nextPage() {
+                                        window.open("booking.php", "_self");
+                                    }                                                        
+        </script>
+
     </body>
 
 </html>
