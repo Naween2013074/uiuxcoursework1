@@ -17,7 +17,7 @@ and open the template in the editor.
         <link href="resources/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="resources/css/booking-nearest-pub.css">        
         <link rel="stylesheet" type="text/css" href="resources/libs/jquery-mobile/jquery.mobile-1.4.5.min.css">
-        
+
 
         <style>
             th, td {
@@ -134,32 +134,25 @@ and open the template in the editor.
                                     <div>
                                         <p class="display-1 " style="text-align:center;">2016/01/15, 7 O'Clock.</p>
                                     </div>
-
-
                                 </div>
-                                <div >
+                                <div>
                                     <div class="wrap-ver ico-image ">
                                         <div class="container">
-
                                             <div class="row">
-
+                                                <div align="center">
+                                                    <!--<button id="booknowe"  class="ui-btn ui-btn-b cusbtn" style="min-width: 50px;background: #434343; border-color: #ffffff;border-radius: 10px;">Go To Home</button>-->
+                                                    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                                        <input type="hidden" name="cmd" value="_s-xclick">
+                                                        <input type="hidden" name="hosted_button_id" value="VE6K9YBKDXZGY">
+                                                        <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                                        <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="92" height="26">
+                                                    </form>
+                                                </div>
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-2"></div>
-                                                <div class="col-md-4"><div class="row justy centerbottom">
-                                                        <button id="booknowe"  class="ui-btn ui-btn-b cusbtn" style="min-width: 50px;background: #434343; border-color: #ffffff;border-radius: 10px;">Go To Home</button>
-
-                                                    </div></div>
-
-                                                <div class="col-md-2"></div>
-                                                <div class="col-md-2"></div>
-
                                             </div>
-
                                         </div>
-
-
-
-                                    </div>    
+                                    </div>  
                                 </div>
                             </div>
                         </div>
@@ -173,7 +166,7 @@ and open the template in the editor.
 
 
 
-       
+
         <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
         <script src="resources/libs/jQuery/js/jquery.3.1.1.min.js"></script>
         <script src="resources/libs/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>        
