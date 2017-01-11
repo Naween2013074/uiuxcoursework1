@@ -1,0 +1,13 @@
+{
+    "name": "vendor/setwemudapub",
+    "description": "Description of project setwemudapub.",
+    "authors": [
+        {
+            "name": "Cnf",
+            "email": "your@email.here"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^5.2"
+    }
+}

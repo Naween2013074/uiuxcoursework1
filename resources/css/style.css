@@ -183,14 +183,23 @@ footer {
 }
 
 .footer-details .address p {
-    font-size: 12px;
+    font-size: 18px;
+}
+.footer-details .address h2 {
+    font-size: 24px;
 }
 
 .footer-details .contact {
     text-align: center;
 }
-.footer-details .findus {
+
+.footer-details .contact p {
     text-align: center;
+    font-size: 18px;
+}
+.footer-details .findus h2 {
+    text-align: center;
+    font-size: 24px;
 }
 
 .footer-details .social-media ul {
@@ -205,7 +214,7 @@ footer {
     float: left;
     width: 25%;
     text-align: center;
-    font-size: 22px;
+    font-size: 24px;
 }
 
 .footer-details .social-media ul li a {
@@ -220,6 +229,10 @@ footer {
 
 .footer-details .contact {
     text-align: center;
+    font-size: 18px;
+}
+.footer-details .contact h2 {
+    font-size: 24px;
 }
 
 .footer-details .rate ul {
@@ -229,12 +242,15 @@ footer {
     padding: 0;
     width: 100%;    
 }
+.footer-details .rate-us p {
+    font-size: 24px;    
+}
 
 .footer-details .rate ul li {
     float: left;
     width: 20%;
     text-align: left;
-    font-size: 14px;
+    font-size: 22px;
 }
 
 .footer-details .rate ul li a {
@@ -279,8 +295,22 @@ footer {
     font-size: 48px;
 }
 
+.newsletter_message {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #3d3d3d;
+    border-bottom: 2px solid #ccc;
+}
 
+.newsletter_message p {
+    font-size: 26px;
+    color: #fff;
+}
 
+.newsletter_message h2 {
+    font-size: 32px;
+    color: #fff;
+}
 
 
 
