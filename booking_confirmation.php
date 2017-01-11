@@ -1,4 +1,4 @@
 <?php
-include('pages/booking-confirmation.html');
+include('pages/booking_confirmation.html');
 ?>
 

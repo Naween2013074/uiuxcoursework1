@@ -1,3 +1,3 @@
 <?php
-include('pages/booking-details.html');
+include('pages/booking_nearest_pub.html');
 ?>
