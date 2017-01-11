@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Booking Nearest </title>
+
+        <!-- Bootstrap -->
+        <link href="resources/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="resources/css/booking-nearest-pub.css">
+        <!--<link rel="stylesheet" href="resources/css/custom-theme.css">-->
+        <!--<link rel="stylesheet" href="resources/css/maincss.css">-->
+        <!--<link rel="stylesheet" href="resources/css/custom-theme.min.css">-->
+        <!--<link type="text/css" rel="stylesheet" href="resources/libs/font-awesome/css/font-awesome.min.css" >-->
+        <link rel="stylesheet" type="text/css" href="resources/libs/jquery-mobile/jquery.mobile.icons.min.css">
+        <link rel="stylesheet" type="text/css" href="resources/libs/jquery-mobile/jquery.mobile-1.4.5.min.css">
+        <!--<script src="resources/jscript/resize.js"></script>-->
+        <script src="resources/libs/jQuery/js/jquery-3.1.1.min.js"></script>
+        <script src="resources/libs/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+
+        <style>
+            th, td {
+                /*                border: 1px solid black;*/
+                padding: 10px;                
+                table-layout:fixed;
+            }
+            #tb-one{
+                width: 50%;
+            }
+            #tb-two{
+                width: 50%;
+            }
+            img {
+                display: block;
+                margin: 0 auto;
+                max-width: 50%;
+                max-height: 50%;
+
+            }
+            h2{
+                color: white;
+                text-shadow: 3px 2px #000000;
+            }
+            p{
+                color: white;
+                text-shadow: 3px 2px #000000;
+            }
+            #tabs  {
+                background: #434343;                
+                padding: 10px;
+            }
+            #one {
+                background: #434343;
+            }
+            #two {
+                background: #434343;
+            }
+            #two-normal {
+                background: #434343;
+            }
+            #oneone{
+                background: #434343;
+            }
+            body{
+                background: #434343;
+            }
+            .ui-page { 
+                background:#434343;
+            }
+            .display-3{
+                color: white;
+                text-shadow: 3px 2px #000000;
+                text-align: center;
+            }
+            .marge{
+                /*margin-right: 200px*/
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="row">
+
+                <h1 class="display-3">Booking</h1>
+            </div>
+            <div class="row">
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-md-12 ">
+                            <div data-role="tabs" id="tabs" class="tabs tabs-hight">
+                                <div data-role="navbar">
+                                    <ul>
+                                        <li><a href="#one" class="ui-btn-active ui-state-persist ui-btn-b" data-ajax="false">Nearest Pubs</a></li>
+                                        <li><a href="#two" class="ui-btn-inactive-new ui-btn-b" data-ajax="false">Select City</a></li>
+
+                                    </ul>
+                                </div>
+                                <div id="one" class="tabs ui-body-d ui-content">
+                                    <ul data-role="listview" data-inset="true">
+                                        <li><a href="booking.html" style="background-color:#434343" >
+                                                <img src="resources/images/booking/pub-moratuwa.jpg">
+                                                <h2>Wellawatte</h2>
+                                                <p>4Km</p></a>
+                                        </li>
+                                        <li><a style="background-color:#434343">
+                                                <img src="resources/images/booking/pub-mount.jpg">
+                                                <h2>Moratuwa</h2>
+                                                <p>26Km</p></a>
+                                        </li>
+                                        <li><a style="background-color:#434343">
+                                                <img src="resources/images/booking/pub-nawala.jpg">
+                                                <h2>Panadura</h2>
+                                                <p>32Km</p></a>
+                                        </li>
+                                        <li><a style="background-color:#434343">
+                                                <img src="resources/images/booking/pub-nugegoda.jpg">
+                                                <h2>Nugegoda</h2>
+                                                <p>12Km</p></a>
+                                        </li>
+                                        <li><a style="background-color:#434343">
+                                                <img src="resources/images/booking/pub-polgasowita.jpg">
+                                                <h2>Kirulapone</h2>
+                                                <p>8Km</p></a>
+                                        </li>
+                                        <li><a style="background-color:#434343">
+                                                <img src="resources/images/booking/pub-wellawatte.jpg">
+                                                <h2>Dehiwala</h2>
+                                                <p>7Km</p></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="two" class="img tabs ui-body-d ui-content">
+                                    <div class="container">
+
+                                        <div class="row">
+
+                                            <div class="col-md-6"><th id="tb-one"><img src="resources/images/booking/sl-map.png" alt="Mountain View"></div>
+                                            <div class="col-md-6 marge"><ul class="ui-li" data-role="listview" data-inset="true">
+                                                    <li><a style="background-color:#434343" >
+                                                            <img src="resources/images/booking/pub-moratuwa.jpg">
+                                                            <h2>Wellawatte</h2>
+                                                            <p>4Km</p></a>
+                                                    </li>
+                                                    <li><a style="background-color:#434343">
+                                                            <img src="resources/images/booking/pub-mount.jpg">
+                                                            <h2>Moratuwa</h2>
+                                                            <p>26Km</p></a>
+                                                    </li>
+                                                    <li><a style="background-color:#434343">
+                                                            <img src="resources/images/booking/pub-nawala.jpg">
+                                                            <h2>Panadura</h2>
+                                                            <p>32Km</p></a>
+                                                    </li>
+                                                    <li><a style="background-color:#434343">
+                                                            <img src="resources/images/booking/pub-nugegoda.jpg">
+                                                            <h2>Nugegoda</h2>
+                                                            <p>12Km</p></a>
+                                                    </li>
+                                                    <li><a style="background-color:#434343">
+                                                            <img src="resources/images/booking/pub-polgasowita.jpg">
+                                                            <h2>Kirulapone</h2>
+                                                            <p>8Km</p></a>
+                                                    </li>
+                                                    <li><a style="background-color:#434343">
+                                                            <img src="resources/images/booking/pub-wellawatte.jpg">
+                                                            <h2>Dehiwala</h2>
+                                                            <p>7Km</p></a>
+                                                    </li>
+
+                                                </ul></div>
+
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+        
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="resources/libs/jquery/jquery-3.1.1.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
+    </body>
+   
+</html>
