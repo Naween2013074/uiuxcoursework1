@@ -1,0 +1,172 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 10, 2017, 10:08:02 PM
+    Author     : NumeshDilusha
+*/
+.display-3{
+    font-size: 42px;
+    color: white;
+    text-shadow: 3px 2px #000000;
+    text-align: center;
+}
+.display-1{
+    color: white;
+    text-shadow: 3px 2px #000000;
+    text-align:center;
+    font-size: 32px;
+}
+.col-md-6{
+    /*margin: 10px;*/   
+    align: center;
+}
+.ui-li {
+    width : 85%;
+
+}
+.justy{
+    text-align: justify;
+    text-justify: inter-word;
+    margin-top: 0px; 
+    margin-left: 30px; 
+    margin-bottom: 30px; 
+    margin-right: 30px; 
+}
+.textcus{
+    color: white;
+    text-shadow: 3px 2px #000000;
+    text-align:center;
+    font-size: 32px;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-top: 30px; 
+    margin-left: 0px; 
+    margin-bottom: 30px; 
+    margin-right: 0px; 
+
+}
+.textcuslogin{
+    color: white;
+    text-shadow: 3px 2px #000000;
+    text-align:center;
+    font-size: 22px;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-top: 30px; 
+    margin-left: 0px; 
+    margin-bottom: 30px; 
+    margin-right: 0px; 
+
+}
+.imgcus{
+    width : 10%;
+    height: 10%;
+    margin-top: 30px; 
+    margin-left: 0px; 
+    margin-bottom: 30px; 
+    margin-right: 0px; 
+}
+.centerbottom {
+
+    padding-top: 200px;
+}
+.centerbottomlogin {
+
+    padding-top: 100px;
+}
+/*iphone image slider portrait caption*/
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px) { 
+    /*booking-confirmation-page-iPhone*/
+    .display-3{
+        font-size: 26px;
+    }
+    .ui-li {
+        width : 100%;
+    }
+    .display-1{
+        font-size: 22px;
+    }
+    .textcus{
+        color: white;
+        text-shadow: 3px 2px #000000;
+        text-align:center;
+        font-size: 32px;
+        text-align: justify;
+        text-justify: inter-word;
+        margin-top: 30px; 
+        margin-left: 0px; 
+        margin-bottom: 30px; 
+        margin-right: 0px; 
+
+    }
+
+    .imgcus{
+        width : 10%;
+        height: 10%;
+        margin-top: 20px; 
+        margin-left: 0px; 
+        margin-bottom: 20px; 
+        margin-right: 0px; 
+    }
+    .centerbottom {
+
+        padding-top: 100px;
+    }
+    .textcuslogin{
+        color: white;
+        text-shadow: 3px 2px #000000;
+        text-align:center;
+        font-size: 16px;
+        text-align: justify;
+        text-justify: inter-word;
+        margin-top: 30px; 
+        margin-left: 0px; 
+        margin-bottom: 30px; 
+        margin-right: 0px; 
+
+    }
+    .centerbottomlogin {
+
+        padding-top: 50px;
+    }
+}
+/*ipad image slider landscape caption*/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) 
+and (orientation : landscape) {
+    /*booking-confirmation-page-iPad*/
+    .display-3{
+        font-size: 36px;
+    }
+    .display-1{
+        font-size: 26px;
+    }
+    .textcus{
+        color: white;
+        text-shadow: 3px 2px #000000;
+        text-align:center;
+        font-size: 28px;
+        text-align: justify;
+        text-justify: inter-word;
+        margin-top: 30px; 
+        margin-left: 0px; 
+        margin-bottom: 30px; 
+        margin-right: 0px; 
+        
+    }
+    .imgcus{
+        width : 20%;
+        height: 20%;
+        margin-top: 20px; 
+        margin-left: 0px; 
+        margin-bottom: 20px; 
+        margin-right: 0px; 
+    }
+    .centerbottom {
+
+        padding-top: 170px;
+    }
+}
+
