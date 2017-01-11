@@ -129,28 +129,30 @@
             <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
             <script src="resources/libs/flexslider/js/jquery.flexslider.js"></script>
             <script type="text/javascript">
-                $(window).load(function () {
+
+                $(document).ready(function () {
+                    $(".cross").hide();
+                    $(".menu").hide();
+                    $(".hamburger").click(function () {
+                        $(".menu").slideToggle("slow", function () {
+                            $(".hamburger").hide();
+                            $(".cross").show();
+                        });
+                    });
+                    $(".cross").click(function () {
+                        $(".menu").slideToggle("slow", function () {
+                            $(".cross").hide();
+                            $(".hamburger").show();
+                        });
+                    });
                     $('.flexslider').flexslider({
                         animation: "slide"
                     });
                 });
+
             </script>
             <script>
-                $(".cross").hide();
-                $(".menu").hide();
-                $(".hamburger").click(function () {
-                    $(".menu").slideToggle("slow", function () {
-                        $(".hamburger").hide();
-                        $(".cross").show();
-                    });
-                });
 
-                $(".cross").click(function () {
-                    $(".menu").slideToggle("slow", function () {
-                        $(".cross").hide();
-                        $(".hamburger").show();
-                    });
-                });
             </script>
         </footer>
     </body>  
