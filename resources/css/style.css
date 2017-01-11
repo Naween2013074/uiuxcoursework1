@@ -214,7 +214,7 @@ footer {
     float: left;
     width: 25%;
     text-align: center;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .footer-details .social-media ul li a {
@@ -225,7 +225,34 @@ footer {
     color: #9c9c9c;
 }
 
+.address_title h2{
+    font-size: 23px;
+    color: #FFFFFF;
+}
+.address_title p{
+    font-size: 18px;
+    color: #FFFFFF;
+}
 
+.contact_title h2{
+    font-size: 23px;
+    color: #FFFFFF;
+}
+
+.contact_title p{
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.findus_title h2{
+    font-size: 23px;
+    color: #FFFFFF;
+}
+
+.rateus_title h2{
+    font-size: 23px;
+    color: #FFFFFF;
+}
 
 .footer-details .contact {
     text-align: center;
@@ -243,7 +270,7 @@ footer {
     width: 100%;    
 }
 .footer-details .rate-us p {
-    font-size: 24px;    
+    font-size: 43px;    
 }
 
 .footer-details .rate ul li {
