@@ -18,6 +18,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
         <script src="resources/libs/puzzlegame/jquery.snap-puzzle.js"></script>
 
+        <script>
+            var totalPoints = 0;
+            var difficultLevel = 2;
+        </script>
+
+
         <style>
             th, td {
                 /*                border: 1px solid black;*/
@@ -77,41 +83,44 @@
             <h1 class="display-3">Puzzle Game</h1>
         </div>
 
-
-
-
-        <div hidden="true" style="background-position: center;height: 50px;background-repeat: space;width: 80%;margin-top: 20px;margin-left: auto;margin-right: auto;background-size: cover;">
-            <p style="text-align: center;line-height: 300%;width: 80%;display: block;margin-left: auto;margin-right: auto;font-size:100%;color: white;font-family: 'Comic Sans MS', cursive, sans-serif;">Score 0/10</p>
+        <div class=" alert alert-success" 
+             style="color: blue; font-size: 20px ; margin:10px 10px 10px 10px; text-align: center"  id="puzzle_e"> <a href="#" class="pure-button button-lg restart-puzzle" data-grid="2">Easy</a>
+        </div>
+        <div class=" alert alert-warning" 
+             style="color: blue; font-size: 20px ; margin:10px 10px 10px 10px; text-align: center"  id="puzzle_m"> <a href="#" class="pure-button button-lg restart-puzzle" data-grid="3">Medium</a>
+        </div>
+        <div class=" alert alert-danger" 
+             style="color: blue; font-size: 20px ; margin:10px 10px 10px 10px; text-align: center"  id="puzzle_d"> <a href="#" class="pure-button button-lg restart-puzzle" data-grid="5">Difficult</a>
         </div>
 
-        <!--<div style="position: absolute;width: 100%;height: 35%;z-index: 0;top: 53%;background: url('imgs/text_back.png');background-size: cover;background-repeat: round;">
-         <p style="text-align: center;line-height: 100px;width: 80%;display: block;margin-left: auto;margin-right: auto;">This is a paragraph</p>
-        </div>-->
-
-        <div id="puzzle-containment" style="background:transparent;margin:10px 10px 10px 10px;">
+        <div id="puzzle-containment" style="border-top: 1px solid #eee;border-bottom:1px solid #434343;margin:30px 0;padding:10px;text-align:center">
             <div class="pure-g" style="max-width:1280px;margin:auto">
                 <div class="pure-u-1 pure-u-md-1-2"><div style="margin:10px">
                         <img id="source_image" class="pure-img" src="resources/images/puzzlegame/puzzlegame1.jpg">
-                    </div>
-                </div>
+                    </div></div>
                 <div class="pure-u-1 pure-u-md-1-2">
                     <div id="pile" style="margin:10px">
                         <div id="puzzle_solved" style="display:none;text-align:center;position:relative;top:25%">
-                            <h2 style="margin:0 0 20px">Well done!</h2>
-                            <a class="pure-button button-lg restart-puzzle" data-grid="3">Restart Puzzle</a>
-                            <!--<br><br>
-                            <a href="#" class="restart-puzzle" data-grid="5">5x5</a>
-                            &nbsp; <a href="#" class="restart-puzzle" data-grid="7">7x7</a>
-                            &nbsp; <a href="#" class="restart-puzzle" data-grid="10">10x10</a>-->
+                            <br><br>
                         </div>
+                        <div class="" 
+                             style="color: white; font-size: 25px ; margin:10px 10px 10px 10px; text-align: center"  id="successMsg" hidden="true"><p> Well Done !!!</p> <p>Successfully Completed the puzzle game</p>
+                        </div>
+
+                        <div class="" 
+                             style="color: yellow; font-size: 25px ; margin:10px 10px 10px 10px; text-align: center"  id="pointsMsg" hidden="true">
+                        </div>
+
                     </div>
                 </div>
             </div>
-            <div class="alert alert-success" 
-                 style="color: green; font-size: 16px"  id="successMsg" hidden="true">Successfully Completed the puzzle game</div>
-
         </div>
+
         <script>
+
+            var totalPoints = 0;
+            var difficultLevel = 2;
+
             // jQuery UI Touch Punch 0.2.3 - must load after jQuery UI
             // enables touch support for jQuery UI
             !function (a) {
@@ -148,7 +157,12 @@
                     pile: '#pile',
                     containment: '#puzzle-containment',
                     onComplete: function () {
-                        $("#successMsg").show();
+                        $('#puzzle_e').hide();
+                        $('#puzzle_m').hide();
+                        $('#puzzle_d').hide();
+                        $('#successMsg').show();
+                        document.getElementById("pointsMsg").innerHTML = difficultLevel + " Points added ";
+                        $('#pointsMsg').show();
                         $('#source_image').fadeOut(150).fadeIn();
 
                     }
@@ -157,11 +171,17 @@
 
             $(function () {
                 $('#pile').height($('#source_image').height());
-                start_puzzle(2);
+                start_puzzle(3);
 
                 $('.restart-puzzle').click(function () {
+                    $('#successMsg').hide();
+                    $('#puzzle_solved').hide();
                     $('#source_image').snapPuzzle('destroy');
+
+                    difficultLevel = $(this).data('grid') * 10;
                     start_puzzle($(this).data('grid'));
+
+                    console.log($(this).data('grid'));
                 });
 
                 $(window).resize(function () {
@@ -181,8 +201,6 @@
             //     ');
             // }
         </script>
-
         <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
-
     </body>
 </html>
