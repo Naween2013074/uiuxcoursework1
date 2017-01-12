@@ -28,12 +28,15 @@
 
 body {
     background-color: #434343;
+    
+    
 }
 
 /*navigation*/
 
 #page {
     position: relative;
+    max-width: 100%;
 }
 
 .main-logo {
@@ -432,7 +435,7 @@ footer {
     color: #fff;
 }
 
-@media (min-width: 375px)  and (max-width: 667px) {
+/*@media (min-width: 375px)  and (max-width: 667px) {
     .book {
         display: none;
     }
@@ -442,7 +445,7 @@ footer {
     .th {
         display: none;
     }
-}
+}*/
 
 @media (min-width: 768px)  and (max-width: 2000px) {
     .image-link:first-child a img {
@@ -457,9 +460,9 @@ footer {
         width: 50%;
     }
 
-    .flexslider .slides li img {
-        /*        max-width: 768px;*/
-    }
+/*    .flexslider .slides li img {
+                max-width: 768px;
+    }*/
 }
 
 
