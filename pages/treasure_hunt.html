@@ -7,7 +7,8 @@
         <link href="resources/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">          
         <link rel="stylesheet" href="resources/css/styleFloating.css">
         <link rel="stylesheet" href="resources/css/mapview.css">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link rel="stylesheet" href="resources/css/stylelistview.css">
         <style type="text/css">
             #mapContainer {
                 height: 100%;
@@ -45,8 +46,6 @@
     <body>
 
 
-
-
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATc7EQ2JnX4P9ncUozLEtYkojgBIQfuNA"></script>
         <script>
             function initMap() {
@@ -75,29 +74,29 @@
                                 '<h3>PUB1</h3>' +
                                 '<p>The Brooklyn Museum is an art museum located in the New York City borough of Brooklyn.</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
                                 '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
-                                '<button onclick="favorite()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' + '</div>'],
+                                '<button id="place1" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' + '</div>'],
                     ['<div class="info_content">' +
                                 '<h3>PUB2</h3>' +
                                 '<p>The Brooklyn Public Library (BPL) is the public library system of the borough of Brooklyn, in New York City.</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
                                 '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
-                                '<button onclick="favorite()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' +
+                                '<button id="place2" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' +
                                 '</div>'],
                     ['<div class="info_content">' +
                                 '<h3>PUB3</h3>' +
                                 '<p>The Prospect Park Zoo is a 12-acre (4.9 ha) zoo located off Flatbush Avenue on the eastern side of Prospect Park, Brooklyn, New York City.</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
                                 '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
-                                '<button onclick="favorite()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' +
+                                '<button id="place3" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' +
                                 '</div>'],
                     ['<div class="info_content">' +
                                 '<h3>PUB4</h3>' +
                                 '<p>The Brooklyn Museum is an art museum located in the New York City borough of Brooklyn.</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
                                 '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
-                                '<button onclick="favorite()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' + '</div>'],
+                                '<button id="place4" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' + '</div>'],
                     ['<div class="info_content">' +
                                 '<h3>PUB5</h3>' +
                                 '<p>The Brooklyn Public Library (BPL) is the public library system of the borough of Brooklyn, in New York City.</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
                                 '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
-                                '<button onclick="favorite()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' +
+                                '<button id="place5" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' +
                                 '</div>']
                 ];
 
@@ -143,13 +142,6 @@
 //            });
         </script>
 
-        <script src="resources/libs/jquery/jquery-3.1.1.min.js"></script>
-        <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
-        <!--        <div class="iframe-container">
-                    <div id="mapContainer">
-                        <div id="mapCanvas"></div>
-                    </div>
-                </div>-->
 
 
         <a href="#0" class="info-button">
@@ -169,59 +161,288 @@
 
         <div class="overlay">
             <div class="information">
-                <h1>info</h1>
-                <ul class="tags">
-                    <li><a href="#0">Tour</a></li>
-                    <li><a href="#0">Rock</a></li>
-                    <li><a href="#0">Backstage</a></li>
-                </ul>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                </p>
-                <p>
-                    tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie</p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum 
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                </p>
-                <p>
-                    tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie</p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum 
-                </p>
+                <h1>Treasure Hunt Points</h1>  
 
-            </div>
-        </div>
-        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
-        <script src="resources/js/floatingbtn.js"></script>
+                <div class="container1">
+                    <div class="list-view">
 
-        <script>
+                        <div class="list__item user status--online">
+                            <div class="media media--user">
+                                <div class="media__image">
+                                    <div class="image__overlay"></div>
+                                    <img src="resources/images/treasure_hunt/game1.png" alt="user" class="img--avatar">
+                                </div>
+                                <div class="media__bd user__bd">
+                                    <i class="status-indicator status--pulse"></i>
+                                    <div class="user-info">
+                                        <p class="user__name">BeerPuzzle</p>
+                                        <p class="user__description">Wellawatte Arpico</p>
+                                        <p style="margin-left: 150px" class="user__name">20 POINTS</p>
+                                    </div>
+                                    <div class="actions">
+                                        <a href="#" class="action__item">
+                                            <!--<img src="resources/images/love.png" alt="Mountain View" style="width:24px;height:24px;">-->
 
-            function playGame() {
-                alert("play game");
-            }
-            function showInfo() {
-                alert("show info");
-            }
-            function favorite() {
-                // Check browser support
-                if (typeof (Storage) !== "undefined") {
-                    // Store
-                    localStorage.setItem("favorite", "Smith");
-                    // Retrieve
-                    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-                } else {
-                    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-                }
-            }
-        </script>
-    </body>
-</html>
+                                            <!--<svg class="icon icon--32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M9.7 7.2c.2-.2.5 0 .7 0l3.3 3.4c.2.2.3.5 0 .7l-1 1.8c-.4.7-.4 1.5 0 2 0 0 .4 1 2 2.4 1.4 1.5 2.6 2.2 2.6 2.2.4.3 1.2.3 1.6 0l1.5-1.2c.2-.2.5 0 .7 0l3.3 3.4c.2.2.3.5 0 .7 0 0-1.6 2.6-2.6 2.6s-4-1-9-6-6-8-6-9 2.7-3 2.7-3z" fill-rule="evenodd"/></svg>-->
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list__item user status--online">
+                            <div class="media media--user">
+                                <div class="media__image">
+                                    <div class="image__overlay"></div>
+                                    <img src="resources/images/treasure_hunt/game2.png" alt="user" class="img--avatar">
+                                </div>
+                                <div class="media__bd user__bd">
+                                    <i class="status-indicator status--pulse"></i>
+                                    <div class="user-info">
+                                        <p class="user__name">BeerNerd</p>
+                                        <p class="user__description">Wellawatte Station</p>
+                                        <p style="margin-left: 150px" class="user__name">35 POINTS</p>
+                                    </div>
+                                    <div class="actions">
+                                        <a href="#" class="action__item">
+                                            <!--<img src="resources/images/love.png" alt="Mountain View" style="width:24px;height:24px;">-->
+
+                                            <!--<svg class="icon icon--32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M9.7 7.2c.2-.2.5 0 .7 0l3.3 3.4c.2.2.3.5 0 .7l-1 1.8c-.4.7-.4 1.5 0 2 0 0 .4 1 2 2.4 1.4 1.5 2.6 2.2 2.6 2.2.4.3 1.2.3 1.6 0l1.5-1.2c.2-.2.5 0 .7 0l3.3 3.4c.2.2.3.5 0 .7 0 0-1.6 2.6-2.6 2.6s-4-1-9-6-6-8-6-9 2.7-3 2.7-3z" fill-rule="evenodd"/></svg>-->
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list__item user status--online">
+                            <div class="media media--user">
+                                <div class="media__image">
+                                    <div class="image__overlay"></div>
+                                    <img src="resources/images/treasure_hunt/game3.png" alt="user" class="img--avatar">
+                                </div>
+                                <div class="media__bd user__bd">
+                                    <i class="status-indicator status--pulse"></i>
+                                    <div class="user-info">
+                                        <p class="user__name">BeerTrivia</p>
+                                        <p class="user__description">Wiliam Junction</p>
+                                        <p style="margin-left: 150px" class="user__name">10 POINTS</p>
+                                    </div>
+                                    <div class="actions">
+                                        <a href="#" class="action__item">
+                                            <!--<img src="resources/images/love.png" alt="Mountain View" style="width:24px;height:24px;">-->
+                                            <!--<svg class="icon icon--32" viewBox="0 0 32 32" xmlns="resources/images/love.png"><path d="M9.7 7.2c.2-.2.5 0 .7 0l3.3 3.4c.2.2.3.5 0 .7l-1 1.8c-.4.7-.4 1.5 0 2 0 0 .4 1 2 2.4 1.4 1.5 2.6 2.2 2.6 2.2.4.3 1.2.3 1.6 0l1.5-1.2c.2-.2.5 0 .7 0l3.3 3.4c.2.2.3.5 0 .7 0 0-1.6 2.6-2.6 2.6s-4-1-9-6-6-8-6-9 2.7-3 2.7-3z" fill-rule="evenodd"/></svg>-->
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <h1>Favorite List</h1>
+                <div class="container1">
+                    <div class="list-view">
+
+                        <div id="listitem1" class="list__item user status--away">
+                            <div class="media media--user">
+                                <div class="media__image">
+                                    <div class="image__overlay"></div>
+                                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/csswizardry/128.jpg" alt="user" class="img--avatar">
+                                </div>
+                                <div class="media__bd user__bd">
+                                    <i class="status-indicator"></i>
+                                    <div class="user-info">
+                                        <p class="user__name">Harry Roberts1</p>
+                                        <p class="user__description">Consultant Front-end Architect</p>
+                                    </div>
+                                    <div class="actions">
+                                        <a id="item1" href="#" onclick="hideFav(this.id)" class="action__item">
+                                            <img src="resources/images/treasure_hunt/love.png" alt="Mountain View" style="width:24px;height:24px;">
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="listitem2" class="list__item user status--away">
+                                <div class="media media--user">
+                                    <div class="media__image">
+                                        <div class="image__overlay"></div>
+                                        <img src="https://s3.amazonaws.com/uifaces/faces/twitter/csswizardry/128.jpg" alt="user" class="img--avatar">
+                                    </div>
+                                    <div class="media__bd user__bd">
+                                        <i class="status-indicator"></i>
+                                        <div class="user-info">
+                                            <p class="user__name">Harry Roberts2</p>
+                                            <p class="user__description">Consultant Front-end Architect</p>
+                                        </div>
+                                        <div class="actions">
+                                            <a id="item2" href="#" onclick="hideFav(this.id)"  class="action__item">
+                                                <img src="resources/images/treasure_hunt/love.png" alt="Mountain View" style="width:24px;height:24px;">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="listitem3" class="list__item user status--away">
+                                    <div class="media media--user">
+                                        <div class="media__image">
+                                            <div class="image__overlay"></div>
+                                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/csswizardry/128.jpg" alt="user" class="img--avatar">
+                                        </div>
+                                        <div class="media__bd user__bd">
+                                            <i class="status-indicator"></i>
+                                            <div class="user-info">
+                                                <p class="user__name">Harry Roberts3</p>
+                                                <p class="user__description">Consultant Front-end Architect</p>
+                                            </div>
+                                            <div class="actions">
+                                                <a id="item3" href="#" onclick="hideFav(this.id)" class="action__item">
+                                                    <img src="resources/images/treasure_hunt/love.png" alt="Mountain View" style="width:24px;height:24px;">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="listitem4" class="list__item user status--away">
+                                        <div class="media media--user">
+                                            <div class="media__image">
+                                                <div class="image__overlay"></div>
+                                                <img src="https://s3.amazonaws.com/uifaces/faces/twitter/csswizardry/128.jpg" alt="user" class="img--avatar">
+                                            </div>
+                                            <div class="media__bd user__bd">
+                                                <i class="status-indicator"></i>
+                                                <div class="user-info">
+                                                    <p class="user__name">Harry Roberts4</p>
+                                                    <p class="user__description">Consultant Front-end Architect</p>
+                                                </div>
+                                                <div class="actions">
+                                                    <a id="item4" href="#" onclick="hideFav(this.id)"  class="action__item">
+                                                        <img src="resources/images/treasure_hunt/love.png" alt="Mountain View" style="width:24px;height:24px;">
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="listitem5" class="list__item user status--away">
+                                            <div class="media media--user">
+                                                <div class="media__image">
+                                                    <div class="image__overlay"></div>
+                                                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/csswizardry/128.jpg" alt="user" class="img--avatar">
+                                                </div>
+                                                <div class="media__bd user__bd">
+                                                    <i class="status-indicator"></i>
+                                                    <div class="user-info">
+                                                        <p class="user__name">Harry Roberts5</p>
+                                                        <p class="user__description">Consultant Front-end Architect</p>
+                                                    </div>
+                                                    <div class="actions">
+                                                        <a id="item5" href="#" onclick="hideFav(this.id)"  class="action__item">
+                                                            <img src="resources/images/treasure_hunt/love.png" alt="Mountain View" style="width:24px;height:24px;">
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+                            <script src="resources/js/floatingbtn.js"></script>
+
+                            <script>
+
+                                                            function playGame() {
+                                                                alert("play game");
+                                                            }
+                                                            function showInfo() {
+                                                                alert("show info");
+                                                            }
+                                                            function favorite(clicked_id) {
+                                                                addRemoveFav(clicked_id, "true");
+                                                                if (clicked_id == "place1") {
+                                                                    document.getElementById("listitem1").style.display = "block";
+                                                                } else if (clicked_id == "place2") {
+                                                                    document.getElementById("listitem2").style.display = "block";
+                                                                } else if (clicked_id == "place3") {
+                                                                    document.getElementById("listitem3").style.display = "block";
+                                                                } else if (clicked_id == "place4") {
+                                                                    document.getElementById("listitem4").style.display = "block";
+                                                                } else {
+                                                                    document.getElementById("listitem5").style.display = "block";
+                                                                }
+
+                                                            }
+                                                            function hideFav(clicked_id) {
+                                                                //                $(this).hide("slow");
+
+                                                                
+                                                                if (clicked_id == "item1") {
+                                                                    addRemoveFav("place1", 'fales');
+                                                                    document.getElementById("listitem1").style.display = "none";
+                                                                } else if (clicked_id == "item2") {
+                                                                    addRemoveFav("place2", 'fales');
+                                                                    document.getElementById("listitem2").style.display = "none";
+                                                                } else if (clicked_id == "item3") {
+                                                                    addRemoveFav("place3", 'fales');
+                                                                    document.getElementById("listitem3").style.display = "none";
+                                                                } else if (clicked_id == "item4") {
+                                                                    addRemoveFav("place4", 'fales');
+                                                                    document.getElementById("listitem4").style.display = "none";
+                                                                } else {
+                                                                    addRemoveFav("place", 'fales');
+                                                                    document.getElementById("listitem5").style.display = "none";
+                                                                }
+
+                                                            }
+                                                            function addRemoveFav(clicked_id, boolval) {
+
+                                                                if (typeof (Storage) !== "undefined") {
+                                                                    // Store
+
+
+                                                                    localStorage.setItem(clicked_id, boolval);
+                                                                    // Retrieve
+//                                                                    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+                                                                } else {
+//                                                                    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+                                                                }
+                                                            }
+                                                            function loadFav() {
+                                                                console.log("IN");
+                                                                if (typeof (Storage) !== "undefined") {
+                                                                    // Store
+                                                                    var j = 1;
+                                                                    for (var i = 0; i < localStorage.length; i++) {
+                                                                        if (localStorage.getItem("place" + j) == "true") {
+                                                                            document.getElementById("listitem" + j).style.display = "block";
+                                                                            console.log(localStorage.getItem("item1" + j));
+                                                                        } else if (localStorage.getItem("place" + j) == "false") {
+                                                                            document.getElementById("listitem" + j).style.display = "none";
+                                                                        }
+                                                                        console.log(localStorage.getItem("item1" + j));
+                                                                        j++;
+                                                                    }
+                                                                    
+                                                                    // Retrieve
+                                                                    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+                                                                } else {
+//                                                                    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+                                                                }
+                                                            }
+                                                            $(document).ready(function () {
+                                                                console.log("ready!");
+                                                                loadFav();
+                                                            });
+
+                            </script>
+                            <script src="resources/libs/jQuery/js/jquery.3.1.1.min.js"></script>
+                            <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
+                            <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+                            <script src="resources/jscript/floatingbtn.js"></script>
+                            <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+
+
+                            </body>
+                            </html>
