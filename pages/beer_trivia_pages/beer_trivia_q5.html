@@ -103,31 +103,49 @@
 
                                                     <li>
 
-                                                        <h2 style="color:white; text-align: center;" >What is advertised as ?probably the best lager in the world?? </h2>
+                                                        <h2 style="color:white; text-align: center;" >What is advertised as "probably the best lager" in the world ? </h2>
 
                                                         <div>
-                                                            <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+                                                            <input type="radio" name="question-5-answers" id="question-1-answers-A" value="A" />
                                                             <label for="question-1-answers-A">Lion </label>
                                                         </div>
 
                                                         <div>
-                                                            <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
+                                                            <input type="radio" name="question-5-answers" id="question-1-answers-B" value="B" />
                                                             <label for="question-1-answers-B">Carlsberg</label>
                                                         </div>
 
                                                         <div>
-                                                            <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
+                                                            <input type="radio" name="question-5-answers" id="question-1-answers-C" value="C" />
                                                             <label for="question-1-answers-C">Budwiser</label>
                                                         </div>
 
                                                         <div>
-                                                            <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
+                                                            <input type="radio" name="question-5-answers" id="question-1-answers-D" value="D" />
                                                             <label for="question-1-answers-D">Bud Light</label>
                                                         </div>  
                                                     </li>           
                                                 </ol>
-                                                <input type="submit" style="text-align: center;" value="Submit Quiz" />
+                                                <div style="text-align:center; font-size: 150%;">
+                                                    <input type="submit" id="submit5_button_id" style="text-align: center;" value="Submit" />
+                                                </div>
                                             </form>
+                                            <div class="pure-u-1 pure-u-md-1-2">
+                                                <div id="pile" style="margin:10px">
+                                                    <div id="beer_trivia5_solved" style="display:none;text-align:center;position:relative;top:25%">
+                                                        <h2 style="margin:0 0 20px; color:yellow;">All questions completed Successfully !<br> </h2>
+                                                        <h1 style="margin:0 0 20px; color:red;">5</h1>  <h2 style="color:yellow;">Points awarded ! Total 25/25</h2>
+                                                        <button type="button" onclick="window.location = 'treasure_hunt.php';"class="btn btn-primary btn-lg">Back To Treasure Hunt</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pure-u-1 pure-u-md-1-2">
+                                                <div id="pile" style="margin:10px">
+                                                    <div id="beer_trivia5_unsolved" style="display:none;text-align:center;position:relative;top:25%">
+                                                        <h2 style="margin:0 0 20px; color:red;">Incorrect Answer, Please retry !<br> </h2>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="row justy centerbottomlogin">
                                             </div>
                                         </div>
@@ -144,6 +162,20 @@
         <!--<script src="resources/libs/jquery/jquery-3.1.1.min.js"></script>-->
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+                                                            $(document).ready(function () {
+                                                                $("input[type='submit']").click(function () {
+                                                                    var answr1 = $("input[name='question-5-answers']:checked").val();
+                                                                    if (answr1 === "B") {
+                                                                        $('#beer_trivia5_unsolved').hide();
+                                                                        $('#submit5_button_id').hide();
+                                                                        $('#beer_trivia5_solved').show();
+                                                                    } else {
+                                                                        $('#beer_trivia5_unsolved').show();
+                                                                    }
+                                                                });
 
+                                                            });
+        </script>
     </body>
 </html>
