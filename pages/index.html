@@ -163,17 +163,14 @@
             <script src="resources/libs/mmenu/js/jquery.mmenu.all.min.js"></script>
             <script type="text/javascript">
                 $(window).load(function () {
+                    $(document).ready(function () {
+                        $('nav#menu').mmenu();
+                    });
+
                     $('.flexslider').flexslider({
                         animation: "slide"
                     });
-                });
-            </script>
-            <script type="text/javascript">
-                $(function () {
-                    $('nav#menu').mmenu();
-                });
-            </script>
-
+                });            </script>
         </footer>
     </body>  
 </html>
