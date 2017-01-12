@@ -57,6 +57,9 @@
                                     <div class="" 
                                          style="color: yellow; font-size: 25px ; margin:10px 10px 10px 10px; text-align: center"  id="pointsMsg" hidden="true">
                                     </div>
+                                    <div style="display:none;" id="back_to_treasure_hunt_btn">
+                                        <button type="button" id="back_to_treasure_hunt_btn" onclick="window.location = 'treasure_hunt.php';"class="btn btn-primary btn-lg">Back To Treasure Hunt</button>
+                                    </div>
                                 </div>
                                 <div class="col-md-4 pagination-centered"></div>
                             </div>
@@ -71,36 +74,36 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
     <script>
-        $("#booknow").click(function () {
-            var answer = $("#answer").val();
-            if (answer) {
-                if (answer === 'corona') {
+                                $("#booknow").click(function () {
+                                    var answer = $("#answer").val();
+                                    if (answer) {
+                                        if (answer === 'corona') {
+                                             $('#back_to_treasure_hunt_btn').show();
+                                            $('#failMsg').hide();
+                                            $('#infoMsg').hide();
+                                            $('#quiz').hide();
+                                            $('#s').hide();
+                                            $('#a').show();
 
-                    $('#failMsg').hide();
-                    $('#infoMsg').hide();
-                    $('#quiz').hide();
-                    $('#s').hide();
-                    $('#a').show();
-
-                    $("#successMsg").fadeIn("slow", function () {
-                    });
-                    document.getElementById("pointsMsg").innerHTML = " 10 Points added ";
-                    $("#pointsMsg").fadeIn("slow", function () {
-                    });
-                } else {
-                    $('#infoMsg').hide();
-                    document.getElementById("failMsg").innerHTML = "Wrong Answer !!! Try Again";
-                    $("#failMsg").fadeIn("slow", function () {
-                    });
-                }
-            } else {
-                $('#failMsg').hide();
-                $('#successMsg').hide();
-                document.getElementById("infoMsg").innerHTML = "Please input text";
-                $("#infoMsg").fadeIn("slow", function () {
-                });
-            }
-        });
+                                            $("#successMsg").fadeIn("slow", function () {
+                                            });
+                                            document.getElementById("pointsMsg").innerHTML = " 10 Points added ";
+                                            $("#pointsMsg").fadeIn("slow", function () {
+                                            });
+                                        } else {
+                                            $('#infoMsg').hide();
+                                            document.getElementById("failMsg").innerHTML = "Wrong Answer !!! Try Again";
+                                            $("#failMsg").fadeIn("slow", function () {
+                                            });
+                                        }
+                                    } else {
+                                        $('#failMsg').hide();
+                                        $('#successMsg').hide();
+                                        document.getElementById("infoMsg").innerHTML = "Please input text";
+                                        $("#infoMsg").fadeIn("slow", function () {
+                                        });
+                                    }
+                                });
     </script>
 </body>
 </html>
