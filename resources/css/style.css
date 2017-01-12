@@ -244,20 +244,29 @@ mm-panel {
 
 footer {
     background-color: #4d4c4c;
-    font-size: 18px;
+    font-size: 12px;
     color: #fff;
     padding: 15px 0 0 0px;
 }
 
 .footer-details .address p {
-    font-size: 12px;
+    font-size: 18px;
+}
+.footer-details .address h2 {
+    font-size: 24px;
 }
 
 .footer-details .contact {
     text-align: center;
 }
-.footer-details .findus {
+
+.footer-details .contact p {
     text-align: center;
+    font-size: 18px;
+}
+.footer-details .findus h2 {
+    text-align: center;
+    font-size: 24px;
 }
 
 .footer-details .social-media ul {
@@ -283,10 +292,41 @@ footer {
     color: #9c9c9c;
 }
 
+.address_title h2{
+    font-size: 23px;
+    color: #FFFFFF;
+}
+.address_title p{
+    font-size: 18px;
+    color: #FFFFFF;
+}
 
+.contact_title h2{
+    font-size: 23px;
+    color: #FFFFFF;
+}
+
+.contact_title p{
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.findus_title h2{
+    font-size: 23px;
+    color: #FFFFFF;
+}
+
+.rateus_title h2{
+    font-size: 23px;
+    color: #FFFFFF;
+}
 
 .footer-details .contact {
     text-align: center;
+    font-size: 18px;
+}
+.footer-details .contact h2 {
+    font-size: 24px;
 }
 
 .footer-details .rate ul {
@@ -296,12 +336,15 @@ footer {
     padding: 0;
     width: 100%;    
 }
+.footer-details .rate-us p {
+    font-size: 43px;    
+}
 
 .footer-details .rate ul li {
     float: left;
     width: 20%;
     text-align: left;
-    font-size: 14px;
+    font-size: 22px;
 }
 
 .footer-details .rate ul li a {
@@ -321,7 +364,7 @@ footer {
 }
 
 .subscribe p {
-    font-size: 24px;
+    font-size: 16px;
     color: #fff;
 }
 
@@ -368,17 +411,20 @@ footer {
     font-size: 48px;
 }
 
-.map-div {
-    padding: 10px;
+.newsletter_message {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #3d3d3d;
+    border-bottom: 2px solid #ccc;
 }
 #map {
     width:100%;
     height:736px;
 }
 
-@media (min-width: 320px)  and (max-width: 767px) {
-    .book {
-        display: none;
+.newsletter_message p {
+    font-size: 26px;
+    color: #fff;
     }
     .drink {
         display: none;
@@ -387,6 +433,9 @@ footer {
         display: none;
     }
 
+.newsletter_message h2 {
+    font-size: 32px;
+    color: #fff;
 }
 
 @media (min-width: 768px)  and (max-width: 2000px) {
