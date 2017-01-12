@@ -1,158 +1,74 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Booking</title>
+    <title>Booking</title>
+    <div class="container">
 
-        <!-- Bootstrap -->
-        <link href="resources/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="resources/css/booking-nearest-pub.css">
-        <link rel="stylesheet" type="text/css" href="resources/libs/jquery-mobile/jquery.mobile.icons.min.css">
-        <link rel="stylesheet" type="text/css" href="resources/libs/jquery-mobile/jquery.mobile-1.4.5.min.css">
-        <script src="resources/libs/jQuery/js/jquery.3.1.1.min.js"></script>
-        <script src="resources/libs/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
-        <style>
-            th, td {
-                /*                border: 1px solid black;*/
-                padding: 10px;                
-                table-layout:fixed;
-            }
-            #tb-one{
-                width: 50%;
-            }
-            #tb-two{
-                width: 50%;
-            }
-            img {
-                display: block;
-                margin: 0 auto;
-                max-width: 50%;
-                max-height: 50%;
+        <div class="row">
 
-            }
-            h2{
-                color: white;
-                text-shadow: 3px 2px #000000;
-            }
-            p{
-                color: white;
-                text-shadow: 3px 2px #000000;
-            }
-            #tabs  {
-                background: #434343;                
-                padding: 10px;
-            }
-            #one {
-                background: #434343;
-            }
-            #two {
-                background: #434343;
-            }
-            #two-normal {
-                background: #434343;
-            }
-            #oneone{
-                background: #434343;
-            }
-            body{
-                background: #434343;
-            }
-            .ui-page { 
-                background:#434343;
-            }
+            <h1 class="display-3">Booking</h1>
+        </div>
+        <div class="row">
+            <div class="container">
 
+                <div class="row">
 
-        </style>
-    </head>
-    <body>
-        <div class="container">
+                    <div class="col-md-12 ">
 
-            <div class="row">
+                        <div class="container centerbottom">
 
-                <h1 class="display-3">Booking</h1>
-            </div>
-            <div class="row">
-                <div class="container">
+                            <div class="row">
 
-                    <div class="row">
-
-                        <div class="col-md-12 ">
-
-                            <div class="container centerbottom">
-
-                                <div class="row">
-
-                                    <div class="col-md-6">
-                                        <div class="row">
-                                            <h1 class="display-1" align="left">Colombo>Wellawatte</h1>
-
-                                        </div>
-                                        <div class="row">
-                                            <p class = "justy marge" align="left">Global Towers is a somewhat famous location in Wellawatte. Its short-rental apartments are a common site for bachelor parties, rendezvous(es?), and other going ons. One gentleman fell from a balcony and died in 2006 after an especially dubious party there. Boxer Evander Holyfield also stayed here. Which is all to say, Global Towers is not a conventional hotel, nor is the Beach Club Bar (BCB) your conventional bar. It exists in a weird, transient space. Basically it feels like an Indian airport bar. Though the beach is across the train tracks, the BCB has no view. What you can see is a projector and TV. While we were there they were projecting and playing amazing Tamil karaoke songs and the TV was playing cricket. Which was pretty awesome. The place is dark and has a slightly dodgy feel to it, but everyone there is quite nice. </p>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-
-                                        <div class="row justy">
-                                            <div class="ui-field-contain">
-
-                                                <select name="select-native-fc" id="select-native-fc">
-                                                    <option value="small">Number Of People</option>
-                                                    <option value="small">1</option>
-                                                    <option value="medium">2</option>
-                                                    <option value="large">3</option>
-                                                    <option value="large">4</option>
-                                                    <option value="large">5</option>
-                                                    <option value="large">6</option>
-                                                </select>
-                                            </div>
-
-                                        </div>
-                                        <div class="row justy">
-                                            <input type="date" style="text-align:center;" value="2017-01-14">
-
-                                        </div>
-                                        <div class="row justy">
-                                            <button id="booknowe"  onclick="nextPage()" class="ui-btn ui-btn-b cusbtn" style="background: #434343; border-color: #ffffff;border-radius: 10px;">Book Now</button>
-
-                                        </div>
-
-
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <h1 class="display-1" align="left">Colombo>Wellawatte</h1>
 
                                     </div>
-
-
-
+                                    <div class="row">
+                                        <p class = "justy marge" align="left">Global Towers is a somewhat famous location in Wellawatte. Its short-rental apartments are a common site for bachelor parties, rendezvous(es?), and other going ons. One gentleman fell from a balcony and died in 2006 after an especially dubious party there. Boxer Evander Holyfield also stayed here. Which is all to say, Global Towers is not a conventional hotel, nor is the Beach Club Bar (BCB) your conventional bar. It exists in a weird, transient space. Basically it feels like an Indian airport bar. Though the beach is across the train tracks, the BCB has no view. What you can see is a projector and TV. While we were there they were projecting and playing amazing Tamil karaoke songs and the TV was playing cricket. Which was pretty awesome. The place is dark and has a slightly dodgy feel to it, but everyone there is quite nice. </p>
+                                    </div>
                                 </div>
 
+                                <div class="col-md-6">
+
+                                    <div class="row justy">
+                                        <div class="ui-field-contain">
+
+                                            <select name="select-native-fc" id="select-native-fc">
+                                                <option value="small">Number Of People</option>
+                                                <option value="small">1</option>
+                                                <option value="medium">2</option>
+                                                <option value="large">3</option>
+                                                <option value="large">4</option>
+                                                <option value="large">5</option>
+                                                <option value="large">6</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="row justy">
+                                        <input type="date" style="text-align:center;" value="2017-01-14">
+
+                                    </div>
+                                    <div class="row justy">
+                                        <button id="booknowe"  onclick="nextPage()" class="ui-btn ui-btn-b cusbtn" style="background: #434343; border-color: #ffffff;border-radius: 10px;">Book Now</button>
+
+                                    </div>
+                                </div>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
             </div>
-
         </div>
-        
-        <script>function nextPage() {
-                                        window.open("booking_confirmation.php", "_self");
-                                    }                                                        
-        </script>
-        
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
-        
-    </body>
+    </div>
+
+    <script>function nextPage() {
+            window.open("booking_confirmation.php", "_self");
+        }
+    </script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
 </html>
