@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -8,16 +15,14 @@
 
         <!-- Bootstrap -->
         <link href="resources/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="resources/css/booking-nearest-pub.css">        
+        <link rel="stylesheet" href="resources/css/booking-nearest-pub.css">
+        <link rel="stylesheet" type="text/css" href="resources/libs/jquery-mobile/jquery.mobile.icons.min.css">
         <link rel="stylesheet" type="text/css" href="resources/libs/jquery-mobile/jquery.mobile-1.4.5.min.css">
         <link rel="stylesheet" type="text/css" href="resources/libs/puzzlegame/jquery.snap-puzzle.css">
         <link rel="stylesheet" href="https://cdn.rawgit.com/yahoo/pure-release/v0.6.0/grids-responsive-min.css">
-        <script src="resources/libs/jQuery/js/jquery.3.1.1.min.js"></script>
-        <script src="resources/libs/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>   
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
         <script src="resources/libs/puzzlegame/jquery.snap-puzzle.js"></script>
-
         <style>
             th, td {
                 /*                border: 1px solid black;*/
@@ -33,9 +38,8 @@
             img {
                 display: block;
                 margin: 0 auto;
-                max-width: 100%;
+                max-width: 50%;
                 max-height: 50%;
-
             }
             h2{
                 color: white;
@@ -67,8 +71,6 @@
             .ui-page { 
                 background:#434343;
             }
-
-
         </style>
     </head>
     <body>
@@ -78,10 +80,8 @@
         </div>
 
 
-
-
-        <div hidden="true" style="background-position: center;height: 50px;background-repeat: space;width: 80%;margin-top: 20px;margin-left: auto;margin-right: auto;background-size: cover;">
-            <p style="text-align: center;line-height: 300%;width: 80%;display: block;margin-left: auto;margin-right: auto;font-size:100%;color: white;font-family: 'Comic Sans MS', cursive, sans-serif;">Score 0/10</p>
+        <div style="background-position: center;height: 50px;background-repeat: space;width: 80%;margin-top: 20px;margin-left: auto;margin-right: auto;background-size: cover;">
+            <p style="text-align: center;line-height: 300%;width: 80%;display: block;margin-left: auto;margin-right: auto;font-size:100%;color: white;font-family: 'Comic Sans MS', cursive, sans-serif;">Score 10/10</p>
         </div>
 
         <!--<div style="position: absolute;width: 100%;height: 35%;z-index: 0;top: 53%;background: url('imgs/text_back.png');background-size: cover;background-repeat: round;">
@@ -107,9 +107,6 @@
                     </div>
                 </div>
             </div>
-            <div class="alert alert-success" 
-                 style="color: green; font-size: 16px"  id="successMsg" hidden="true">Successfully Completed the puzzle game</div>
-
         </div>
         <script>
             // jQuery UI Touch Punch 0.2.3 - must load after jQuery UI
@@ -148,16 +145,15 @@
                     pile: '#pile',
                     containment: '#puzzle-containment',
                     onComplete: function () {
-                        $("#successMsg").show();
                         $('#source_image').fadeOut(150).fadeIn();
-
+                        $('#puzzle_solved').show();
                     }
                 });
             }
 
             $(function () {
                 $('#pile').height($('#source_image').height());
-                start_puzzle(2);
+                start_puzzle(3);
 
                 $('.restart-puzzle').click(function () {
                     $('#source_image').snapPuzzle('destroy');
