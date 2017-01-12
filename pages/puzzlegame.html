@@ -200,13 +200,18 @@
                         $('#pointsMsg').show();
                         $('#source_image').fadeOut(150).fadeIn();
 
+                        if (typeof (Storage) !== "undefined") {
+                            // Store the added points in local storage
+                            localStorage.setItem("totalPints", totalPoints + " Points");
+                        }
+
                     }
                 });
             }
 
             $(function () {
                 $('#pile').height($('#source_image').height());
-                start_puzzle(3);
+                start_puzzle(2);
 
                 $('.restart-puzzle').click(function () {
                     $('#successMsg').hide();
@@ -214,9 +219,9 @@
                     $('#source_image').snapPuzzle('destroy');
 
                     difficultLevel = $(this).data('grid') * 10;
+                    //total pints
+                    totalPoints = difficultLevel;
                     start_puzzle($(this).data('grid'));
-
-                    console.log($(this).data('grid'));
                 });
 
                 $(window).resize(function () {
