@@ -1,116 +1,106 @@
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Beer Nerd</title>
-        <!-- Bootstrap -->
-        <link href="resources/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="resources/css/booking-nearest-pub.css">        
-        <link rel="stylesheet" type="text/css" href="resources/libs/jquery-mobile/jquery.mobile-1.4.5.min.css">
-        <script src="resources/libs/jQuery/js/jquery.3.1.1.min.js"></script>
-        <script src="resources/libs/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>        
-        <style>
-            th, td {
-                /*                border: 1px solid black;*/
-                padding: 10px;                
-                table-layout:fixed;
-            }
-            #tb-one{
-                width: 50%;
-            }
-            #tb-two{
-                width: 50%;
-            }
-            img {
-                display: block;
-                margin: 0 auto;
-                max-width: 50%;
-                max-height: 50%;
-            }
-            h2{
-                color: white;
-                text-shadow: 3px 2px #000000;
-            }
-            p{
-                color: white;
-                text-shadow: 3px 2px #000000;
-            }
-            #tabs  {
-                background: #434343;                
-                padding: 10px;
-            }
-            #one {
-                background: #434343;
-            }
-            #two {
-                background: #434343;
-            }
-            #two-normal {
-                background: #434343;
-            }
-            #oneone{
-                background: #434343;
-            }
-            body{
-                background: #434343;
-            }
-            .ui-page { 
-                background:#434343;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <h1 class="display-3">Beer Nerd</h1>
-            </div>
-            <div class="row">
-                <div class="col-lg-4"> </div>
-                <div class="col-lg-4"> 
-                    <!--<img style="min-height: 150px;min-width: 200px;" src="resources/images/login/menu-logo.png">-->
-                    <img src="resources/images/drinks/beer3.png" alt="Pineapple" width="500" height="300">
-                </div>    
-                <div class="col-lg-4"> </div>
-            </div>
-            <div class="row">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 ">
-                            <div class="container"style="padding-left: 10px;padding-right: 40px;">
-                                <div class="row">
-                                    <div class="col-md-4 pagination-centered"></div>
-                                    <div class="col-md-4 pagination-centered">
-                                        <div class="row">
-                                            <form class="textcuslogin ">
-                                                <br>
-                                                <input type="text" placeholder="* Beer Brand" name="beer_brand_name"><br>
+    <style>
 
-                                                <button id="booknowe"  class="ui-btn ui-btn-b cusbtn" style="background: #434343; border-color: #ffffff;border-radius: 10px;">Enter</button>         
+        .nerd img{
+            -webkit-filter: blur(5px); 
+            filter: blur(5px);
+        }
 
-                                            </form>
-                                            <div class="row justy centerbottomlogin">
-                                            </div>
-                                        </div>
+
+    </style>
+
+    <title>Beer Nerd</title>
+
+    <div class="container">
+        <div class="row">
+            <h1 class="display-3">Beer Nerd</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-4"> </div>
+            <div id="s" class="col-lg-4 nerd"> 
+                <img src="resources/images/drinks/beer3.png"  alt="Pineapple" width="500" height="300">
+            </div>    
+            <div  id="a" class="col-lg-4" hidden="true"> 
+                <img src="resources/images/drinks/beer3.png"  alt="Pineapple" width="500" height="300">
+            </div>    
+            <div class="col-lg-4"> </div>
+        </div>
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <div class="container"style="padding-left: 10px;padding-right: 40px;">
+                            <div class="row">
+                                <div class="col-md-4 pagination-centered"></div>
+                                <div class="col-md-4 pagination-centered">
+
+                                    <div class="" 
+                                         style="color: red; font-size: 25px ; margin:10px 10px 10px 10px; text-align: center"  id="failMsg" hidden="true">
                                     </div>
-                                    <div class="col-md-4 pagination-centered"></div>
+                                    <div class="" 
+                                         style="color: blue; font-size: 25px ; margin:10px 10px 10px 10px; text-align: center"  id="infoMsg" hidden="true">
+                                    </div>
+
+                                    <div id="quiz" class="row">
+                                        <form class="textcuslogin ">
+                                            <br>
+                                            <input   id="answer" type="text" placeholder="* Beer Brand" name="beer_brand_name"><br>
+                                            <button id="booknow"  class="ui-btn ui-btn-b cusbtn" style="background: #434343; border-color: #ffffff;border-radius: 10px;">Enter</button>         
+
+                                        </form>
+                                    </div>
+
+                                    <div class="" 
+                                         style="color: white; font-size: 25px ; margin:10px 10px 10px 10px; text-align: center"  id="successMsg" hidden="true"><p> Well Done !!!</p> <p>Successfully Completed the Beer Nerd game</p>
+                                    </div>
+
+                                    <div class="" 
+                                         style="color: yellow; font-size: 25px ; margin:10px 10px 10px 10px; text-align: center"  id="pointsMsg" hidden="true">
+                                    </div>
                                 </div>
+                                <div class="col-md-4 pagination-centered"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="resources/libs/jquery/jquery-3.1.1.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
-        <style>
-            img {
-                -webkit-filter: blur(5px); 
-                filter: blur(5px);
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="resources/libs/jquery/jquery-3.1.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $("#booknow").click(function () {
+            var answer = $("#answer").val();
+            if (answer) {
+                if (answer === 'corona') {
+
+                    $('#failMsg').hide();
+                    $('#infoMsg').hide();
+                    $('#quiz').hide();
+                    $('#s').hide();
+                    $('#a').show();
+
+                    $("#successMsg").fadeIn("slow", function () {
+                    });
+                    document.getElementById("pointsMsg").innerHTML = " 10 Points added ";
+                    $("#pointsMsg").fadeIn("slow", function () {
+                    });
+                } else {
+                    $('#infoMsg').hide();
+                    document.getElementById("failMsg").innerHTML = "Wrong Answer !!! Try Again";
+                    $("#failMsg").fadeIn("slow", function () {
+                    });
+                }
+            } else {
+                $('#failMsg').hide();
+                $('#successMsg').hide();
+                document.getElementById("infoMsg").innerHTML = "Please input text";
+                $("#infoMsg").fadeIn("slow", function () {
+                });
             }
-        </style>
-    </body>
+        });
+    </script>
+</body>
 </html>
