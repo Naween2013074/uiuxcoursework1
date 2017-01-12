@@ -27,7 +27,7 @@
 
 
 body {
-    background-color: #e6e6e6;
+    background-color: #434343;
 }
 
 /*navigation*/
@@ -107,10 +107,10 @@ nav:not(.mm-menu) {
     text-align: center;
 }
 .header {
-    background: #777;
+    background: #434343;
     font-size: 16px;
     font-weight: bold;
-    color: #fff;
+    color: #434343;
     line-height: 60px;
     -moz-box-sizing: border-box;
     box-sizing: border-box;	
@@ -243,7 +243,7 @@ mm-panel {
 }
 
 footer {
-    background-color: #4d4c4c;
+    background-color: #434343;
     font-size: 12px;
     color: #fff;
     padding: 15px 0 0 0px;
@@ -359,7 +359,7 @@ footer {
 .subscribe {
     text-align: center;
     padding: 20px 0;
-    background-color: #3d3d3d;
+    background-color: #434343;
     border-bottom: 2px solid #ccc;
 }
 
@@ -425,7 +425,7 @@ footer {
 .newsletter_message p {
     font-size: 26px;
     color: #fff;
-    }
+}
 
 .newsletter_message h2 {
     font-size: 32px;
