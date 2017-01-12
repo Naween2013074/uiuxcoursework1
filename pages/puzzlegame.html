@@ -7,16 +7,26 @@
         <title>Puzzle Game</title>
 
         <!-- Bootstrap -->
+        <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
+
+        <script src="resources/libs/jQuery/js/jquery-latest.js"></script>
+        <script src="resources/libs/jQuery/js/jquery-ui.min.js"></script>
+        <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
+        <script src="resources/libs/flexslider/js/jquery.flexslider.js"></script>
         <link href="resources/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="resources/css/booking-nearest-pub.css">        
         <link rel="stylesheet" type="text/css" href="resources/libs/jquery-mobile/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" type="text/css" href="resources/css/style.css">
         <link rel="stylesheet" type="text/css" href="resources/libs/puzzlegame/jquery.snap-puzzle.css">
         <link rel="stylesheet" href="https://cdn.rawgit.com/yahoo/pure-release/v0.6.0/grids-responsive-min.css">
+        <link type="text/css" rel="stylesheet" href="resources/libs/font-awesome/css/font-awesome.min.css" >
+        <link rel="stylesheet" type="text/css" href="resources/libs/mmenu/css/jquery.mmenu.all.css">
         <script src="resources/libs/jQuery/js/jquery.3.1.1.min.js"></script>
         <script src="resources/libs/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>   
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
         <script src="resources/libs/puzzlegame/jquery.snap-puzzle.js"></script>
+        <script src="resources/libs/mmenu/js/jquery.mmenu.all.min.js"></script>
 
         <script>
             var totalPoints = 0;
@@ -78,6 +88,31 @@
         </style>
     </head>
     <body>
+        <div id="page">
+            <div class="header">
+                <a href="#menu"><span></span></a>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li><a href="#">Drinks</a></li>
+                    <li><a href="#">Food</a></li>
+                    <li><a href="#">Pub Games</a></li>
+                    <li><a href="#">Booking</a></li>
+                    <li><a href="#">Pub Locator</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Leaderboard</a></li>
+                    <li><a href="#">Statics</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Treasure Hunt</a></li>
+                </ul>
+            </nav>
+            <a class="main-logo"><img  alt="image" src="resources/images/home/beer.png"></a>
+            <a class="place"><img alt="image" src="resources/images/home/place.png"></a>
+            <a class="login"><img  alt="image" src="resources/images/home/login.png"></a>
+            <a class="book"><img  alt="image" src="resources/images/home/book.png"  ></a>
+            <a class="drink"><img  alt="image" src="resources/images/home/drink.png"></a>
+            <a class="th"><img  alt="image" src="resources/images/home/th.png"></a>
+        </div>
 
         <div class="row">
             <h1 class="display-3">Puzzle Game</h1>
@@ -201,6 +236,11 @@
             //     ');
             // }
         </script>
-        <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $('nav#menu').mmenu();
+            });
+        </script>
+
     </body>
 </html>
