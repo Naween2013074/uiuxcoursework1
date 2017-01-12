@@ -6,12 +6,28 @@
         <link type="text/css" rel="stylesheet" href="resources/libs/font-awesome/css/font-awesome.min.css" >
         <link rel="stylesheet" type="text/css" href="resources/css/style.css">
         <link rel="stylesheet" type="text/css" href="resources/libs/flexslider/css/flexslider.css">
-       
+        <link rel="stylesheet" type="text/css" href="resources/libs/mmenu/css/jquery.mmenu.all.css">
 
     </head>
     <body>
         <div id="page">
-            
+            <div class="header">
+                <a href="#menu"><span></span></a>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li><a href="#">Drinks</a></li>
+                    <li><a href="#">Food</a></li>
+                    <li><a href="#">Pub Games</a></li>
+                    <li><a href="#">Booking</a></li>
+                    <li><a href="#">Pub Locator</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Leaderboard</a></li>
+                    <li><a href="#">Statics</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Treasure Hunt</a></li>
+                </ul>
+            </nav>
             <a class="main-logo"><img  alt="image" src="resources/images/home/beer.png"></a>
             <a class="place"><img alt="image" src="resources/images/home/place.png"></a>
             <a class="login"><img  alt="image" src="resources/images/home/login.png"></a>
@@ -20,8 +36,9 @@
             <a class="th"><img  alt="image" src="resources/images/home/th.png"></a>
 
         </div>
-
-        
+     
+        <div class="container-fluid no-gutters">
+            
             <div class="subscribe">
                 <div class="row">
                     <p>Stay up to date with us</p>
@@ -105,7 +122,15 @@
             <script src="resources/libs/jQuery/js/jquery-latest.js"></script>
             <script src="resources/libs/jQuery/js/jquery-ui.min.js"></script>
             <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
-           
+            <script src="resources/libs/flexslider/js/jquery.flexslider.js"></script>
+            <script src="resources/libs/mmenu/js/jquery.mmenu.all.min.js"></script>
+            
+
+            <script type="text/javascript">
+                $(function () {
+                    $('nav#menu').mmenu();
+                });
+            </script>
 
         </footer>
     </body>  
