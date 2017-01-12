@@ -49,84 +49,125 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATc7EQ2JnX4P9ncUozLEtYkojgBIQfuNA"></script>
         <script>
             function initMap() {
-            var map;
-            var bounds = new google.maps.LatLngBounds();
-            var mapOptions = {
-            mapTypeId: 'roadmap'
-            };
-            // Display a map on the web page
-            map = new google.maps.Map(document.getElementById("mapCanvas"), mapOptions);
-            map.setTilt(50);
-            // Multiple markers location, latitude, and longitude
-            var markers = [
-            ['PUB1, SL', 6.8723736, 79.8639056],
-            ['PUB2, SL', 6.870389, 79.858713],
-            ['PUB3, SL', 6.863742, 79.863262],
-            ['PUB4, SL', 6.867705, 79.860644],
-            ['PUB5, SL', 6.869579, 79.860086]
-            ];
-            // Info window content
-            var infoWindowContent = [
-            ['<div class="info_content">' +
-                    '<h3>PUB1</h3>' +
-                    '<p>The Brooklyn Museum is an art museum located in the New York City borough of Brooklyn.</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
-                    '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
-                    '<button id="place1" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' + '</div>'],
-            ['<div class="info_content">' +
-                    '<h3>PUB2</h3>' +
-                    '<p>The Brooklyn Public Library (BPL) is the public library system of the borough of Brooklyn, in New York City.</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
-                    '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
-                    '<button id="place2" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' +
-                    '</div>'],
-            ['<div class="info_content">' +
-                    '<h3>PUB3</h3>' +
-                    '<p>The Prospect Park Zoo is a 12-acre (4.9 ha) zoo located off Flatbush Avenue on the eastern side of Prospect Park, Brooklyn, New York City.</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
-                    '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
-                    '<button id="place3" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' +
-                    '</div>'],
-            ['<div class="info_content">' +
-                    '<h3>PUB4</h3>' +
-                    '<p>The Brooklyn Museum is an art museum located in the New York City borough of Brooklyn.</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
-                    '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
-                    '<button id="place4" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' + '</div>'],
-            ['<div class="info_content">' +
-                    '<h3>PUB5</h3>' +
-                    '<p>The Brooklyn Public Library (BPL) is the public library system of the borough of Brooklyn, in New York City.</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
-                    '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
-                    '<button id="place5" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' +
-                    '</div>']
-            ];
-            // Add multiple markers to map
-            var infoWindow = new google.maps.InfoWindow(), marker, i;
-            // Place each marker on the map  
-            for (i = 0; i < markers.length; i++) {
-            var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-            bounds.extend(position);
-            marker = new google.maps.Marker({
-            position: position,
-                    map: map,
-                    title: markers[i][0]
-            });
-            // Add info window to marker    
-            google.maps.event.addListener(marker, 'click', (function (marker, i) {
-            return function () {
-            infoWindow.setContent(infoWindowContent[i][0]);
-            infoWindow.open(map, marker);
-            }
-            })(marker, i));
-            // Center the map to fit all markers on the screen
-            map.fitBounds(bounds);
-            }
+                var map;
+                var bounds = new google.maps.LatLngBounds();
+                var mapOptions = {
+                    mapTypeId: 'roadmap'
+                };
 
-            // Set zoom level
-            var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function (event) {
+                // Display a map on the web page
+                map = new google.maps.Map(document.getElementById("mapCanvas"), mapOptions);
+                map.setTilt(50);
+
+                // Multiple markers location, latitude, and longitude
+                var markers = [
+                    ['PUB1, SL', 6.8723736, 79.8639056],
+                    ['PUB2, SL', 6.875113, 79.857419],
+                    ['PUB3, SL', 6.861837, 79.860141],
+                    ['PUB4, SL', 6.862336, 79.864005],
+                    ['PUB5, SL', 6.864292, 79.860741]
+                ];
+
+                // Create marker 
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: new google.maps.LatLng(6.868169, 79.860934),
+                    title: 'IIT'
+                });
+
+                // Add circle overlay and bind to marker
+                var circle = new google.maps.Circle({
+                    map: map,
+                    radius: 1000, // 10 miles in metres
+                    strokeColor: '#4271bc',
+                    strokeOpacity: 0.8,
+                    strokeWeight: 1,
+                    fillColor: '#4271bc',
+                    fillOpacity: 0.35,
+                });
+                circle.bindTo('center', marker, 'position');
+
+                // Info window content
+                var infoWindowContent = [
+                    ['<div class="info_content">' +
+                                '<h3>Savoy Cinema</h3>' +
+                                '<p>EAP Films is the market leader in the Sri Lankan Film Industry providing an outstanding entertainment platform for film-goers.\n\
+                                    As a truly strong company we manage and operate 45 modern cinemas under the circuit and possess the best theaters in the Island which includes Savoy, Liberty, Cinemax, Excel Cinema, Wilmax and Concord etc.\n\
+                                    Our annual patrons base is over 5.5 million and we cater to the middle and high-end market within the City limits. We have the ideal platform for an innovative company to promote their brands.</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
+                                '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
+                                '<button id="place1" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' + '</div>'],
+                    ['<div class="info_content">' +
+                                '<h3>Wellawatta Railway Station</h3>' +
+                                '<p>A train station, railway station, railroad station, or depot (see below) is a railway facility where trains regularly stop to load or unload passengers or freight.\n\
+                                    It generally consists of at least one track-side platform and a station building (depot) providing such ancillary services as ticket sales and waiting rooms.\n\
+                                    If a station is on a single-track line, it often has a passing loop to facilitate traffic movements. The smallest stations are most often referred to as "stops" or, in some parts of the world, as "halts" (flag stops).</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
+                                '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
+                                '<button id="place2" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' +
+                                '</div>'],
+                    ['<div class="info_content">' +
+                                '<h3>Barracuda Sea Food & Grill</h3>' +
+                                '<p>Established in 2013, Barracuda is a household name for seafood in Sri Lanka.\n\
+                                    Our goal is to ensure customer satisfaction by means of providing the finest and freshest ingredients in food preparation and providing an exceptional and friendly dining experience for our guests.constructor\n\
+                                    The restaurant could accommodate upto 300+ guests indoor and outdoor while enjoying the sea breeze under a canopy of trees. There are mangroves and during rainy seasons, the restaurant is able to manage under the dense cover. \n\
+                                    The friendly and relaxing ambience lets you relax with the magical sounds of ocean waves whilst touching your feet on the Golden Sandy Beach.</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
+                                '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
+                                '<button id="place3" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' +
+                                '</div>'],
+                    ['<div class="info_content">' +
+                                '<h3>William Grindings</h3>' +
+                                '<p>A mill is a device that breaks solid materials into smaller pieces by grinding, crushing, or cutting. \n\
+                                        Such comminution is an important unit operation in many processes. \n\
+                                        There are many different types of mills and many types of materials processed in them. \n\
+                                        Historically mills were powered by hand (e.g., via a hand crank), working animal (e.g., horse mill), wind (windmill) or water (watermill).\n\
+                                        Today they are usually powered by electricity.</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
+                                '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
+                                '<button id="place4" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' + '</div>'],
+                    ['<div class="info_content">' +
+                                '<h3>Rudra Play Ground</h3>' +
+                                '<p>A playground, playpark, or play area is a place with a specific design to allow children to play there. It may be indoors but is typically outdoors (where it may be called a tot lot in some regions)\n\
+                                        While a playground is usually designed for children, some playgrounds are designed for other age groups. It is possible for a playground to exclude children if they are below the required age for entrance.</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
+                                '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
+                                '<button id="place5" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' +
+                                '</div>']
+                ];
+
+                // Add multiple markers to map
+                var infoWindow = new google.maps.InfoWindow(), marker, i;
+
+                // Place each marker on the map  
+                for (i = 0; i < markers.length; i++) {
+                    var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+                    bounds.extend(position);
+                    marker = new google.maps.Marker({
+                        position: position,
+                        map: map,
+                        title: markers[i][0]
+                    });
+
+                    // Add info window to marker    
+                    google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                        return function () {
+                            infoWindow.setContent(infoWindowContent[i][0]);
+                            infoWindow.open(map, marker);
+                        }
+                    })(marker, i));
+
+                    // Center the map to fit all markers on the screen
+                    map.fitBounds(bounds);
+                }
+
+                // Set zoom level
+                var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function (event) {
 //                    this.setZoom(14);
 
-            google.maps.event.removeListener(boundsListener);
-            });
+                    google.maps.event.removeListener(boundsListener);
+                });
+
+
             }
             // Load initialize function
             google.maps.event.addDomListener(window, 'load', initMap);
+
 //            google.maps.event.addListener(marker, 'click', function () {
 //                window.location.href = "www.youtube.com";
 //            });
@@ -167,11 +208,11 @@
                                     <div class="user-info">
                                         <p class="user__name">BeerPuzzle</p>
                                         <p class="user__description">Wellawatte Arpico</p>
-                                        <p id="beerPuzzle" style="margin-left: 150px" class="user__name"></p>
+                                        <p style="margin-left: 150px" class="user__name">20 POINTS</p>
                                     </div>
                                     <div class="actions">
                                         <a href="#" class="action__item">
-
+                                            <!--<img src="resources/images/love.png" alt="Mountain View" style="width:24px;height:24px;">-->
 
                                             <!--<svg class="icon icon--32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M9.7 7.2c.2-.2.5 0 .7 0l3.3 3.4c.2.2.3.5 0 .7l-1 1.8c-.4.7-.4 1.5 0 2 0 0 .4 1 2 2.4 1.4 1.5 2.6 2.2 2.6 2.2.4.3 1.2.3 1.6 0l1.5-1.2c.2-.2.5 0 .7 0l3.3 3.4c.2.2.3.5 0 .7 0 0-1.6 2.6-2.6 2.6s-4-1-9-6-6-8-6-9 2.7-3 2.7-3z" fill-rule="evenodd"/></svg>-->
                                     </div>
@@ -190,7 +231,7 @@
                                     <div class="user-info">
                                         <p class="user__name">BeerNerd</p>
                                         <p class="user__description">Wellawatte Station</p>
-                                        <p id="beerNerd" style="margin-left: 150px" class="user__name"></p>
+                                        <p style="margin-left: 150px" class="user__name">35 POINTS</p>
                                     </div>
                                     <div class="actions">
                                         <a href="#" class="action__item">
@@ -213,7 +254,7 @@
                                     <div class="user-info">
                                         <p class="user__name">BeerTrivia</p>
                                         <p class="user__description">Wiliam Junction</p>
-                                        <p id="beerTrivia"style="margin-left: 150px" class="user__name"></p>
+                                        <p style="margin-left: 150px" class="user__name">10 POINTS</p>
                                     </div>
                                     <div class="actions">
                                         <a href="#" class="action__item">
@@ -227,22 +268,6 @@
 
                     </div>
                 </div>
-
-                <div style="margin-top: 40px;">
-                    <table style=" width:100%">
-
-                        <tr>
-                            <td><img  src="resources/images/treasure_hunt/coin.png" alt="Mountain View" style="width:48px;height:48px;margin-left: 40px;"></td>
-                            <td><p>Total Points</p></td>
-                            <td><p id="totalpoints">0 Points</p></td>
-
-                        </tr>
-
-                    </table>
-
-
-                </div>
-
                 <h1>Favorite List</h1>
                 <div class="container1">
                     <div class="list-view">
@@ -358,150 +383,93 @@
                             <script>
 
                                                             function playGame() {
-                                                            alert("play game");
+                                                                alert("play game");
                                                             }
                                                             function showInfo() {
-                                                            alert("show info");
+                                                                alert("show info");
                                                             }
                                                             function favorite(clicked_id) {
-                                                            addRemoveFav(clicked_id, "true");
-                                                            if (clicked_id == "place1") {
-                                                            document.getElementById("listitem1").style.display = "block";
-                                                            } else if (clicked_id == "place2") {
-                                                            document.getElementById("listitem2").style.display = "block";
-                                                            } else if (clicked_id == "place3") {
-                                                            document.getElementById("listitem3").style.display = "block";
-                                                            } else if (clicked_id == "place4") {
-                                                            document.getElementById("listitem4").style.display = "block";
-                                                            } else {
-                                                            document.getElementById("listitem5").style.display = "block";
-                                                            }
+                                                                addRemoveFav(clicked_id, "true");
+                                                                if (clicked_id == "place1") {
+                                                                    document.getElementById("listitem1").style.display = "block";
+                                                                } else if (clicked_id == "place2") {
+                                                                    document.getElementById("listitem2").style.display = "block";
+                                                                } else if (clicked_id == "place3") {
+                                                                    document.getElementById("listitem3").style.display = "block";
+                                                                } else if (clicked_id == "place4") {
+                                                                    document.getElementById("listitem4").style.display = "block";
+                                                                } else {
+                                                                    document.getElementById("listitem5").style.display = "block";
+                                                                }
 
                                                             }
                                                             function hideFav(clicked_id) {
-                                                            //                $(this).hide("slow");
+                                                                //                $(this).hide("slow");
 
 
-                                                            if (clicked_id == "item1") {
-                                                            addRemoveFav("place1", 'fales');
-                                                            document.getElementById("listitem1").style.display = "none";
-                                                            } else if (clicked_id == "item2") {
-                                                            addRemoveFav("place2", 'fales');
-                                                            document.getElementById("listitem2").style.display = "none";
-                                                            } else if (clicked_id == "item3") {
-                                                            addRemoveFav("place3", 'fales');
-                                                            document.getElementById("listitem3").style.display = "none";
-                                                            } else if (clicked_id == "item4") {
-                                                            addRemoveFav("place4", 'fales');
-                                                            document.getElementById("listitem4").style.display = "none";
-                                                            } else {
-                                                            addRemoveFav("place5", 'fales');
-                                                            document.getElementById("listitem5").style.display = "none";
-                                                            }
+                                                                if (clicked_id == "item1") {
+                                                                    addRemoveFav("place1", 'fales');
+                                                                    document.getElementById("listitem1").style.display = "none";
+                                                                } else if (clicked_id == "item2") {
+                                                                    addRemoveFav("place2", 'fales');
+                                                                    document.getElementById("listitem2").style.display = "none";
+                                                                } else if (clicked_id == "item3") {
+                                                                    addRemoveFav("place3", 'fales');
+                                                                    document.getElementById("listitem3").style.display = "none";
+                                                                } else if (clicked_id == "item4") {
+                                                                    addRemoveFav("place4", 'fales');
+                                                                    document.getElementById("listitem4").style.display = "none";
+                                                                } else {
+                                                                    addRemoveFav("place", 'fales');
+                                                                    document.getElementById("listitem5").style.display = "none";
+                                                                }
 
                                                             }
                                                             function addRemoveFav(clicked_id, boolval) {
 
-                                                            if (typeof (Storage) !== "undefined") {
-                                                            // Store
+                                                                if (typeof (Storage) !== "undefined") {
+                                                                    // Store
 
 
-                                                            localStorage.setItem(clicked_id, boolval);
-                                                            // Retrieve
+                                                                    localStorage.setItem(clicked_id, boolval);
+                                                                    // Retrieve
 //                                                                    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-                                                            } else {
+                                                                } else {
 //                                                                    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-                                                            }
+                                                                }
                                                             }
                                                             function loadFav() {
+                                                                console.log("IN");
+                                                                if (typeof (Storage) !== "undefined") {
+                                                                    // Store
+                                                                    var j = 1;
+                                                                    for (var i = 0; i < localStorage.length; i++) {
+                                                                        if (localStorage.getItem("place" + j) == "true") {
+                                                                            document.getElementById("listitem" + j).style.display = "block";
+                                                                            console.log(localStorage.getItem("item1" + j));
+                                                                        } else if (localStorage.getItem("place" + j) == "false") {
+                                                                            document.getElementById("listitem" + j).style.display = "none";
+                                                                        }
+                                                                        console.log(localStorage.getItem("item1" + j));
+                                                                        j++;
+                                                                    }
 
-                                                            if (typeof (Storage) !== "undefined") {
-                                                            // Store
-//                                                                    var j = 1;
-//                                                                    for (var i = 0; i < localStorage.length; i++) {
-//                                                                        var placeName = "place"+j;
-//                                                                        console.log(placeName+" / "+localStorage.getItem(placeName));
-//                                                                        if (localStorage.getItem(placeName) == "true") {
-//                                                                            document.getElementById(placeName).style.display = "block";
-//                                                                            console.log("IF IN");
-////                                                                            console.log(localStorage.getItem("item" + j));
-//                                                                        } else if (localStorage.getItem(placeName) == "false") {
-//                                                                            document.getElementById(placeName).style.display = "none";
-//                                                                            console.log("ELSE IF IN");
-//                                                                        }else{
-//                                                                            console.log("ELSE IN");
-//                                                                        }
-////                                                                        console.log(localStorage.getItem("item" + j));
-//                                                                        j++;
-                                                            if (localStorage.getItem("place1") == "true") {
-                                                            console.log(placeName + " / " + localStorage.getItem(placeName));
-                                                            document.getElementById("listitem1").style.display = "block";
-                                                            } else if (localStorage.getItem("place2") == "true") {
-                                                            console.log(placeName + " / " + localStorage.getItem(placeName));
-                                                            document.getElementById("listitem2").style.display = "block";
-                                                            } else if (localStorage.getItem("place3") == "true") {
-                                                            console.log(placeName + " / " + localStorage.getItem(placeName));
-                                                            document.getElementById("listitem3").style.display = "block";
-                                                            } else if (localStorage.getItem("place4") == "true") {
-                                                            console.log(placeName + " / " + localStorage.getItem(placeName));
-                                                            document.getElementById("listitem4").style.display = "block";
-                                                            } else if (localStorage.getItem("place5") == "true") {
-                                                            console.log(placeName + " / " + localStorage.getItem(placeName));
-                                                            document.getElementById("listitem5").style.display = "block";
-                                                            } else if (localStorage.getItem("place1") == "false") {
-                                                            console.log(placeName + " / " + localStorage.getItem(placeName));
-                                                            document.getElementById("listitem1").style.display = "none";
-                                                            } else if (localStorage.getItem("place2") == "false") {
-                                                            console.log(placeName + " / " + localStorage.getItem(placeName));
-                                                            document.getElementById("listitem2").style.display = "none";
-                                                            } else if (localStorage.getItem("place3") == "false") {
-                                                            console.log(placeName + " / " + localStorage.getItem(placeName));
-                                                            document.getElementById("listitem3").style.display = "none";
-                                                            } else if (localStorage.getItem("place4") == "false") {
-                                                            console.log(placeName + " / " + localStorage.getItem(placeName));
-                                                            document.getElementById("listitem4").style.display = "none";
-                                                            } else if (localStorage.getItem("place5") == "false") {
-                                                            console.log(placeName + " / " + localStorage.getItem(placeName));
-                                                            document.getElementById("listitem5").style.display = "none";
-                                                            }
-
-                                                            }
-
-                                                            // Retrieve
-
-
-                                                            }
-                                                            function gamescoreUpdate() {
-
-                                                            if (typeof (Storage) !== "undefined") {
-                                                            // Store
-
-                                                            var beerTrivia = 0;
-                                                            var beerPuzzle = 0;
-                                                            var beerNerd = 0;
-                                                            var totalpoints =0;
-//                                                            localStorage.setItem("BeerPuzzle", boolval);
-                                                            // Retrieve
-                                                                    document.getElementById("beerPuzzle").innerHTML = localStorage.getItem("BeerPuzzle")+" Points";
-                                                                    document.getElementById("beerTrivia").innerHTML = localStorage.getItem("BeerTrivia")+" Points";
-                                                                    document.getElementById("beerNerd").innerHTML = localStorage.getItem("BeerNerd")+" Points";
-                                                            } else {
+                                                                    // Retrieve
+                                                                    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+                                                                } else {
 //                                                                    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-                                                            }
+                                                                }
                                                             }
                                                             $(document).ready(function () {
-                                                            document.getElementById("listitem1").style.display = "none";
-                                                            document.getElementById("listitem2").style.display = "none";
-                                                            document.getElementById("listitem3").style.display = "none";
-                                                            document.getElementById("listitem4").style.display = "none";
-                                                            document.getElementById("listitem5").style.display = "none";
-                                                            loadFav();
+                                                                console.log("ready!");
+                                                                loadFav();
                                                             });
+
                             </script>
                             <script src="resources/libs/jQuery/js/jquery.3.1.1.min.js"></script>
                             <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
                             <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
-                            <!--<script src="resources/js/floatingbtn.js"></script>-->
+                            <script src="resources/jscript/floatingbtn.js"></script>
                             <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 

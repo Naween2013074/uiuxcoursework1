@@ -9,6 +9,7 @@
         <!-- Bootstrap -->
         <!--        <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>-->
         <script src="resources/libs/jQuery/js/jquery.3.1.1.min.js"></script>
+        <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
         <script src="resources/libs/jQuery/js/jquery-latest.js"></script>
         <script src="resources/libs/jQuery/js/jquery-ui.min.js"></script>
         <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
@@ -21,7 +22,6 @@
         <link rel="stylesheet" href="https://cdn.rawgit.com/yahoo/pure-release/v0.6.0/grids-responsive-min.css">
         <link type="text/css" rel="stylesheet" href="resources/libs/font-awesome/css/font-awesome.min.css" >
         <link rel="stylesheet" type="text/css" href="resources/libs/mmenu/css/jquery.mmenu.all.css">
-
         <script src="resources/libs/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>   
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
@@ -200,18 +200,13 @@
                         $('#pointsMsg').show();
                         $('#source_image').fadeOut(150).fadeIn();
 
-                        if (typeof (Storage) !== "undefined") {
-                            // Store the added points in local storage
-                            localStorage.setItem("totalPints", totalPoints + " Points");
-                        }
-
                     }
                 });
             }
 
             $(function () {
                 $('#pile').height($('#source_image').height());
-                start_puzzle(2);
+                start_puzzle(3);
 
                 $('.restart-puzzle').click(function () {
                     $('#successMsg').hide();
@@ -219,9 +214,9 @@
                     $('#source_image').snapPuzzle('destroy');
 
                     difficultLevel = $(this).data('grid') * 10;
-                    //total pints
-                    totalPoints = difficultLevel;
                     start_puzzle($(this).data('grid'));
+
+                    console.log($(this).data('grid'));
                 });
 
                 $(window).resize(function () {
