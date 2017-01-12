@@ -1,0 +1,181 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Beer Trivia</title>
+        <!-- Bootstrap -->
+        <link href="resources/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="resources/css/booking-nearest-pub.css">        
+        <link rel="stylesheet" type="text/css" href="resources/libs/jquery-mobile/jquery.mobile-1.4.5.min.css">
+        <script src="resources/libs/jQuery/js/jquery.3.1.1.min.js"></script>
+        <script src="resources/libs/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>        
+        <style>
+            th, td {
+                /*                border: 1px solid black;*/
+                padding: 10px;                
+                table-layout:fixed;
+            }
+            #tb-one{
+                width: 50%;
+            }
+            #tb-two{
+                width: 50%;
+            }
+            img {
+                display: block;
+                margin: 0 auto;
+                max-width: 50%;
+                max-height: 50%;
+            }
+            h2{
+                color: white;
+                text-shadow: 3px 2px #000000;
+            }
+            p{
+                color: white;
+                text-shadow: 3px 2px #000000;
+            }
+            #tabs  {
+                background: #434343;                
+                padding: 10px;
+            }
+            #one {
+                background: #434343;
+            }
+            #two {
+                background: #434343;
+            }
+            #two-normal {
+                background: #434343;
+            }
+            #oneone{
+                background: #434343;
+            }
+            body{
+                background: #434343;
+            }
+            .ui-page { 
+                background:#434343;
+            }
+
+
+            #ol_form{
+                position: absolute;
+                top: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1 class="display-3">Beer Trivia</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4"> </div>
+                <div class="col-lg-4"> 
+                    <!--<img style="min-height: 150px;min-width: 200px;" src="resources/images/login/menu-logo.png">-->
+                    <!--<img src="resources/images/drinks/beer3.png" alt="Pineapple" width="500" height="300">-->
+                </div>    
+                <div class="col-lg-4"> </div>
+            </div>
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <div class="container"style="padding-left: 10px;padding-right: 40px;">
+                                <div class="row">
+                                    <div class="col-md-4 pagination-centered"></div>
+                                    <div class="col-md-4 pagination-centered">
+                                        <div class="row">
+
+
+
+
+                                            <!--<div id="page-wrap">-->
+
+                                            <h1 style="color:white; text-align: center;" >Question 4/5</h1>
+
+                                            <form action="grade.php" method="post" id="quiz">
+
+                                                <ol>
+
+                                                    <li>
+
+                                                        <h2 style="color:white; text-align: center;" >For which beer is Rutland famous?? </h2>
+
+                                                        <div>
+                                                            <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+                                                            <label for="question-1-answers-A">Lion </label>
+                                                        </div>
+
+                                                        <div>
+                                                            <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
+                                                            <label for="question-1-answers-B">Carlsberg</label>
+                                                        </div>
+
+                                                        <div>
+                                                            <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
+                                                            <label for="question-1-answers-C">Ruddles</label>
+                                                        </div>
+
+                                                        <div>
+                                                            <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
+                                                            <label for="question-1-answers-D">Adnams</label>
+                                                        </div>  
+                                                    </li>           
+                                                </ol>
+                                                <div style="text-align:center; font-size: 150%;">
+                                                    <input type="submit" id="submit4_button_id" style="text-align: center;" value="Submit" />
+                                                </div>
+                                            </form>
+                                            <div class="pure-u-1 pure-u-md-1-2">
+                                                <div id="pile" style="margin:10px">
+                                                    <div id="beer_trivia4_solved" style="display:none;text-align:center;position:relative;top:25%">
+                                                        <h2 style="margin:0 0 20px; color:yellow;">Question 4 completed Successfully !<br> 
+                                                            <h1 style="margin:0 0 20px; color:red;">5</h1>  <h2 style="color:yellow;">Points awarded ! Total 20/25</h2>
+                                                            <button type="button" onclick="window.location = 'beer_trivia_q5.php';"class="btn btn-primary">Next Question</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pure-u-1 pure-u-md-1-2">
+                                                <div id="pile" style="margin:10px">
+                                                    <div id="beer_trivia4_unsolved" style="display:none;text-align:center;position:relative;top:25%">
+                                                        <h2 style="margin:0 0 20px; color:red;">Incorrect Answer, Please retry !<br> </h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row justy centerbottomlogin">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 pagination-centered"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!--<script src="resources/libs/jquery/jquery-3.1.1.min.js"></script>-->
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+                                                                $(document).ready(function () {
+                                                                    $("input[type='submit']").click(function () {
+                                                                        var answr1 = $("input[name='question-1-answers']:checked").val();
+                                                                        if (answr1 === "C") {
+                                                                            $('#beer_trivia4_unsolved').hide();
+                                                                            $('#submit4_button_id').hide();
+                                                                            $('#beer_trivia4_solved').show();
+                                                                        } else {
+                                                                            $('#beer_trivia4_unsolved').show();
+                                                                        }
+                                                                    });
+
+                                                                });
+        </script>
+    </body>
+</html>
