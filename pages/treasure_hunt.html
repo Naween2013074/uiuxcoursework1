@@ -375,7 +375,7 @@
                                                             function hideFav(clicked_id) {
                                                                 //                $(this).hide("slow");
 
-                                                                
+
                                                                 if (clicked_id == "item1") {
                                                                     addRemoveFav("place1", 'fales');
                                                                     document.getElementById("listitem1").style.display = "none";
@@ -389,7 +389,7 @@
                                                                     addRemoveFav("place4", 'fales');
                                                                     document.getElementById("listitem4").style.display = "none";
                                                                 } else {
-                                                                    addRemoveFav("place", 'fales');
+                                                                    addRemoveFav("place5", 'fales');
                                                                     document.getElementById("listitem5").style.display = "none";
                                                                 }
 
@@ -408,29 +408,69 @@
                                                                 }
                                                             }
                                                             function loadFav() {
-                                                                console.log("IN");
+
                                                                 if (typeof (Storage) !== "undefined") {
                                                                     // Store
-                                                                    var j = 1;
-                                                                    for (var i = 0; i < localStorage.length; i++) {
-                                                                        if (localStorage.getItem("place" + j) == "true") {
-                                                                            document.getElementById("listitem" + j).style.display = "block";
-                                                                            console.log(localStorage.getItem("item1" + j));
-                                                                        } else if (localStorage.getItem("place" + j) == "false") {
-                                                                            document.getElementById("listitem" + j).style.display = "none";
-                                                                        }
-                                                                        console.log(localStorage.getItem("item1" + j));
-                                                                        j++;
+//                                                                    var j = 1;
+//                                                                    for (var i = 0; i < localStorage.length; i++) {
+//                                                                        var placeName = "place"+j;
+//                                                                        console.log(placeName+" / "+localStorage.getItem(placeName));
+//                                                                        if (localStorage.getItem(placeName) == "true") {
+//                                                                            document.getElementById(placeName).style.display = "block";
+//                                                                            console.log("IF IN");
+////                                                                            console.log(localStorage.getItem("item" + j));
+//                                                                        } else if (localStorage.getItem(placeName) == "false") {
+//                                                                            document.getElementById(placeName).style.display = "none";
+//                                                                            console.log("ELSE IF IN");
+//                                                                        }else{
+//                                                                            console.log("ELSE IN");
+//                                                                        }
+////                                                                        console.log(localStorage.getItem("item" + j));
+//                                                                        j++;
+                                                                    if (localStorage.getItem("place1") == "true") {
+                                                                        console.log(placeName+" / "+localStorage.getItem(placeName));
+                                                                        document.getElementById("listitem1").style.display = "block";
+                                                                    } else if (localStorage.getItem("place2") == "true") {
+                                                                        console.log(placeName+" / "+localStorage.getItem(placeName));
+                                                                        document.getElementById("listitem2").style.display = "block";
+                                                                    } else if (localStorage.getItem("place3") == "true") {
+                                                                        console.log(placeName+" / "+localStorage.getItem(placeName));
+                                                                        document.getElementById("listitem3").style.display = "block";
+                                                                    } else if (localStorage.getItem("place4") == "true") {
+                                                                        console.log(placeName+" / "+localStorage.getItem(placeName));
+                                                                        document.getElementById("listitem4").style.display = "block";
+                                                                    } else if (localStorage.getItem("place5") == "true") {
+                                                                        console.log(placeName+" / "+localStorage.getItem(placeName));
+                                                                        document.getElementById("listitem5").style.display = "block";
+                                                                    } else if (localStorage.getItem("place1") == "false") {
+                                                                        console.log(placeName+" / "+localStorage.getItem(placeName));
+                                                                        document.getElementById("listitem1").style.display = "none";
+                                                                    } else if (localStorage.getItem("place2") == "false") {
+                                                                        console.log(placeName+" / "+localStorage.getItem(placeName));
+                                                                        document.getElementById("listitem2").style.display = "none";
+                                                                    } else if (localStorage.getItem("place3") == "false") {
+                                                                        console.log(placeName+" / "+localStorage.getItem(placeName));
+                                                                        document.getElementById("listitem3").style.display = "none";
+                                                                    } else if (localStorage.getItem("place4") == "false") {
+                                                                        console.log(placeName+" / "+localStorage.getItem(placeName));
+                                                                        document.getElementById("listitem4").style.display = "none";
+                                                                    } else if (localStorage.getItem("place5") == "false") {
+                                                                        console.log(placeName+" / "+localStorage.getItem(placeName));
+                                                                        document.getElementById("listitem5").style.display = "none";
                                                                     }
-                                                                    
-                                                                    // Retrieve
-                                                                    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-                                                                } else {
-//                                                                    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+
                                                                 }
+
+                                                                // Retrieve
+
+                                                               
                                                             }
                                                             $(document).ready(function () {
-                                                                console.log("ready!");
+                                                                document.getElementById("listitem1").style.display = "none";
+                                                                document.getElementById("listitem2").style.display = "none";
+                                                                document.getElementById("listitem3").style.display = "none";
+                                                                document.getElementById("listitem4").style.display = "none";
+                                                                document.getElementById("listitem5").style.display = "none";
                                                                 loadFav();
                                                             });
 
@@ -438,7 +478,7 @@
                             <script src="resources/libs/jQuery/js/jquery.3.1.1.min.js"></script>
                             <script src="resources/libs/bootstrap/js/bootstrap.min.js"></script>
                             <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
-                            <script src="resources/jscript/floatingbtn.js"></script>
+                            <!--<script src="resources/js/floatingbtn.js"></script>-->
                             <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 
