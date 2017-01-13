@@ -84,50 +84,49 @@
                 circle.bindTo('center', marker, 'position');
                 // Info window content
                 var infoWindowContent = [
-                        ['<div class="info_content">' +
+                    ['<div class="info_content">' +
                                 '<h3>Savoy Cinema</h3>' +
                                 '<p>EAP Films is the market leader in the Sri Lankan Film Industry providing an outstanding entertainment platform for film-goers.\n\
                                     As a truly strong company we manage and operate 45 modern cinemas under the circuit and possess the best theaters in the Island which includes Savoy, Liberty, Cinemax, Excel Cinema, Wilmax and Concord etc.\n\
-                                    Our annual patrons base is over 5.5 million and we cater to the middle and high-end market within the City limits. We have the ideal platform for an innovative company to promote their brands.</p>' + '<button onclick="location.href='puzzlegame.php'" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
-                                '<button onclick="location.href='puzzlegame.php'" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
-                                '<button id="place1" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' + '</div>'
-                        ],
-                        ['<div class="info_content">' +
-                                    '<h3>Wellawatta Railway Station</h3>' +
-                                    '<p>A train station, railway station, railroad station, or depot (see below) is a railway facility where trains regularly stop to load or unload passengers or freight.\n\
+                                    Our annual patrons base is over 5.5 million and we cater to the middle and high-end market within the City limits. We have the ideal platform for an innovative company to promote their brands.</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
+                                '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
+                                '<button id="place1" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' + '</div>'],
+                    ['<div class="info_content">' +
+                                '<h3>Wellawatta Railway Station</h3>' +
+                                '<p>A train station, railway station, railroad station, or depot (see below) is a railway facility where trains regularly stop to load or unload passengers or freight.\n\
                                     It generally consists of at least one track-side platform and a station building (depot) providing such ancillary services as ticket sales and waiting rooms.\n\
                                     If a station is on a single-track line, it often has a passing loop to facilitate traffic movements. The smallest stations are most often referred to as "stops" or, in some parts of the world, as "halts" (flag stops).</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
-                                    '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
-                                    '<button id="place2" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' +
-                                    '</div>'],
-                        ['<div class="info_content">' +
-                                    '<h3>Barracuda Sea Food & Grill</h3>' +
-                                    '<p>Established in 2013, Barracuda is a household name for seafood in Sri Lanka.\n\
+                                '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
+                                '<button id="place2" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' +
+                                '</div>'],
+                    ['<div class="info_content">' +
+                                '<h3>Barracuda Sea Food & Grill</h3>' +
+                                '<p>Established in 2013, Barracuda is a household name for seafood in Sri Lanka.\n\
                                     Our goal is to ensure customer satisfaction by means of providing the finest and freshest ingredients in food preparation and providing an exceptional and friendly dining experience for our guests.constructor\n\
                                     The restaurant could accommodate upto 300+ guests indoor and outdoor while enjoying the sea breeze under a canopy of trees. There are mangroves and during rainy seasons, the restaurant is able to manage under the dense cover. \n\
                                     The friendly and relaxing ambience lets you relax with the magical sounds of ocean waves whilst touching your feet on the Golden Sandy Beach.</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
-                                    '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
-                                    '<button id="place3" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' +
-                                    '</div>'],
-                        ['<div class="info_content">' +
-                                    '<h3>William Grindings</h3>' +
-                                    '<p>A mill is a device that breaks solid materials into smaller pieces by grinding, crushing, or cutting. \n\
+                                '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
+                                '<button id="place3" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' +
+                                '</div>'],
+                    ['<div class="info_content">' +
+                                '<h3>William Grindings</h3>' +
+                                '<p>A mill is a device that breaks solid materials into smaller pieces by grinding, crushing, or cutting. \n\
                                         Such comminution is an important unit operation in many processes. \n\
                                         There are many different types of mills and many types of materials processed in them. \n\
                                         Historically mills were powered by hand (e.g., via a hand crank), working animal (e.g., horse mill), wind (windmill) or water (watermill).\n\
                                         Today they are usually powered by electricity.</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
-                                    '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
-                                    '<button id="place4" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' + '</div>'],
-                        ['<div class="info_content">' +
-                                    '<h3>Rudra Play Ground</h3>' +
-                                    '<p>A playground, playpark, or play area is a place with a specific design to allow children to play there. It may be indoors but is typically outdoors (where it may be called a tot lot in some regions)\n\
+                                '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
+                                '<button id="place4" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' + '</div>'],
+                    ['<div class="info_content">' +
+                                '<h3>Rudra Play Ground</h3>' +
+                                '<p>A playground, playpark, or play area is a place with a specific design to allow children to play there. It may be indoors but is typically outdoors (where it may be called a tot lot in some regions)\n\
                                         While a playground is usually designed for children, some playgrounds are designed for other age groups. It is possible for a playground to exclude children if they are below the required age for entrance.</p>' + '<button onclick="playGame()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-success">Play Game</button>' +
-                                    '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
-                                    '<button id="place5" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' +
-                                    '</div>']
+                                '<button onclick="showInfo()" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-info">Show info</button>' +
+                                '<button id="place5" onclick="favorite(this.id)" style="margin-left: 20px;margin-right: 20px;"type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-heart"></i></button> ' +
+                                '</div>']
                 ];
-                        // Add multiple markers to map
-                        var infoWindow = new google.maps.InfoWindow(), marker, i;
+                // Add multiple markers to map
+                var infoWindow = new google.maps.InfoWindow(), marker, i;
                 // Place each marker on the map  
                 for (i = 0; i < markers.length; i++) {
                     var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
@@ -387,6 +386,7 @@
                             <script>
 
                                                             var totalpoints;
+
                                                             function playGame() {
                                                                 alert("play game");
                                                             }
@@ -507,22 +507,31 @@
                                                                     var beerTrivia;
                                                                     var beerPuzzle;
                                                                     var beerNerd;
+
                                                                     var val = parseInt(localStorage.getItem("totalPoints"));
+                                                                   
+
                                                                     if (localStorage.getItem("BeerPuzzle") !== "undefined") {
                                                                         beerPuzzle = parseInt(localStorage.getItem("BeerPuzzle"));
                                                                         document.getElementById("beerPuzzle").innerHTML = beerPuzzle + " Points";
                                                                         val += beerPuzzle;
+                                                                       
+
                                                                     } else if (localStorage.getItem("BeerTrivia") !== "undefined") {
                                                                         beerTrivia = parseInt(localStorage.getItem("BeerTrivia"));
                                                                         document.getElementById("beerTrivia").innerHTML = beerTrivia + " Points";
+                                                                       
+
                                                                     } else if (localStorage.getItem("BeerNerd") !== "undefined") {
                                                                         beerNerd = parseInt(localStorage.getItem("beerNerd"));
                                                                         document.getElementById("beerNerd").innerHTML = beerNerd + " Points";
+                                                                      
                                                                     }
 
                                                                     localStorage.setItem("totalpoints", val);
-                                                                    if (val !== "undefined") {
 
+                                                                    if (val !== "undefined") {
+                                                                       
                                                                         document.getElementById("totalpoints").innerHTML = beerPuzzle + " Points";
                                                                     } else {
                                                                         document.getElementById("totalpoints").innerHTML = beerPuzzle + " Points";
