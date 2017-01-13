@@ -1,5 +1,6 @@
 <?php
-include('pages/beer_trivia_q3.html');
+include('pages/beer_trivia.html');
 include('pages/footer.html');
 ?>
+
 
