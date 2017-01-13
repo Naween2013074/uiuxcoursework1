@@ -202,6 +202,10 @@
                         document.getElementById("pointsMsg").innerHTML = difficultLevel + " Points added ";
                         $('#pointsMsg').show();
                         $('#source_image').fadeOut(150).fadeIn();
+                        localStorage.setItem("BeerPuzzle", totalPoints);
+                        var val = parseInt(localStorage.getItem("totalPoints"));
+                        totalPoints + val;
+                        localStorage.setItem("totalpoints", totalPoints + val);
 
                     }
                 });
@@ -210,16 +214,14 @@
             $(function () {
                 $('#pile').height($('#source_image').height());
                 start_puzzle(3);
-
                 $('.restart-puzzle').click(function () {
                     $('#successMsg').hide();
                     $('#puzzle_solved').hide();
                     $('#source_image').snapPuzzle('destroy');
 
                     difficultLevel = $(this).data('grid') * 10;
+                    totalPoints = difficultLevel;
                     start_puzzle($(this).data('grid'));
-
-                    console.log($(this).data('grid'));
                 });
 
                 $(window).resize(function () {

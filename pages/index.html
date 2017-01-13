@@ -164,13 +164,15 @@
             <script type="text/javascript">
                 $(window).load(function () {
                     $(document).ready(function () {
+                        var val = 0;
+                        localStorage.setItem("totalpoints", val);
                         $('nav#menu').mmenu();
                     });
 
                     $('.flexslider').flexslider({
                         animation: "slide"
                     });
-                });            </script>
+                });</script>
         </footer>
     </body>  
 </html>
